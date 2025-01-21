@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Kantumruy Pro", sans-serif;
+}
+
+body {
+   
+    background: #77fd1126;
+    color:black;
+
+}
+
+/* Encabezado */
+header {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;  /* Usamos flexbox para alineación horizontal */
+    justify-content: space-between; /* Separar el texto y la cuenta */
+    align-items: center; /* Alinear verticalmente los elementos */
+    width: 100%;  /* Aseguramos que ocupe todo el ancho disponible */
+}
+
+header .welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 270px;  /* Desplaza el texto hacia la derecha */
+}
+
+header .cuenta {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .cuenta:hover {
+    background-color: #f0f0f0;  /* Añade un color de fondo cuando se pasa el mouse */
+}
+
+header .account {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;  /* Hace que la imagen sea circular */
+}
+
+/* Logo */
+
+.logo{
+    width: 230px;
+}
+
+/* Contenedor principal */
+.wrapper-login{ display: flex;}
+.main{  display: flex;}
+
+/* Barra lateral */
+
+.main-aside{
+   background-color:#ffffff;
+   /*aliceblue*/
+    padding: 30px;
+    height: auto;
+}
+
+.nav-list{
+    list-style: none;
+}
+
+/* Barra lateral (nav-item) */
+.nav-item{
+    margin-top: 20px;
+    position:relative; /* Necesario para el posicionamiento de la barra */
+}
+
+/* Estilo cuando el usuario pasa el cursor sobre un item de nav */
+.nav-item:hover{
+    background-color: transparent;/* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilo de la barra (inicialmente en pequeño y transparente) */
+.barra {
+    position: absolute;
+    height: 44px;
+    width: 0; /* Empieza con un ancho de 0 */
+    background-color: #77fd1126; /* Color de la barra */
+    opacity: 0; /* Comienza invisible */
+    transition: width 0.6s, opacity 0.6s; /* Animación suave */
+    z-index: 0; /* La barra está en la capa inferior */
+}
+
+/* La barra de activación que aparece al pasar el cursor sobre el elemento */
+.nav-item:hover .barra{
+    width: 100%; /* Expande la barra de activación */
+    opacity: 1; /* Asegura que la barra sea visible */
+} 
+
+/* Asegura que la barra de activación se expanda con la animación */
+.nav-item.active .barra {
+    width: 100%; /* Cuando el nav-item está activo, la barra se expande */
+    opacity: 1; /* Asegura que la barra sea visible */
+} 
+
+/* Estilo de los enlaces */
+.nav-link{ 
+    position: relative;
+    color: #000; /* Color de texto normal */
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;  /* Para dar espacio al ícono */
+    z-index: 1; /* Asegura que el texto se mantenga visible por encima de la barra */
+    padding-right: 20px;/* Añadir un poco de padding para que la barra esté centrada con la palabra */
+    transition: color 0.5 ease;/* Transición suave para el cambio de color del texto */
+} 
+
+/* El fondo de la barra centrado con la palabra (cambia de color de fondo) */
+.nav-item:hover .nav-link{
+    background-color: #77fd1126; /* Cambia el fondo */
+    /*border-radius: 5px;*/ /* Esquinas redondeadas para el fondo */
+    padding: 5px 20px; /* Ajustamos el padding para que el color de fondo esté centrado */  
+}
+
+.nav-link:hover{
+    color: #000;/* Cambia el color del texto cuando se pasa el mouse */
+}
+
+.nav-link:active{
+    color: #000;
+}
+
+.icon{
+    padding-right: 10px;
+}
+.icon-paneldeprductos{
+    fill: aqua;
+}
+.icon-gestiondeproductos{
+
+    fill: #77fd1126 !important;
+}
+.icon-pedidos,
+.icon-suministros,
+.icon-soporteyayuda{}
+
+/* Estilos de contenido */
+.main-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 26px 25px;
+    padding: 50px;
+    width: 100%;
+}
+
+.box { 
+    position: relative;
+    padding: 10px;
+    background-color: #ffffff;
+    width: 300px;
+    height: 200px;
+    text-align: left;
+    
+}
+
+.box p {
+    font-size: 19px;
+    position: relative;
+    top: 80px;
+    left: 20px;
+    font-weight: bold;
+    color: #232323;
+}
+   
+/* Paneles de control */
+#panel,
+#Gestion,
+#pedidos,
+#suministros,
+#soporte {
+    background-image: url("../imagenes/patron.svg");
+    background-position: bottom right;
+    background-size: contain;
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+}
+
+#panel {
+    background-color: rgba(123, 233, 206, 0.50);
+    box-shadow: 5px 8px 10px #16af89;
+}
+
+#panel:hover {
+    background-color: rgba(155, 226, 208, .8);
+    box-shadow: 5px 8px 10px #128b6d;
+}
+
+#Gestion {
+    background-color: #f1d395;
+    box-shadow: 5px 8px 10px #E5A323;
+}
+
+#Gestion:hover {
+    background-color: #fcd27f;
+    box-shadow: 5px 8px 10px #b68117;
+}
+
+#pedidos {
+    background-color: #f5c3c8;
+    box-shadow: 5px 8px 10px #EC6273;
+}
+
+#pedidos:hover {
+    background-color: #ffb0b8;
+    box-shadow: 5px 8px 10px #e44457;
+}
+
+#suministros {
+    background-color: #dbabf1;
+    box-shadow: 5px 8px 10px #C97FEC;
+}
+
+#suministros:hover {
+    background-color: #e1baf3;
+    box-shadow: 5px 8px 10px #a955cf;
+}
+
+#soporte {
+    background-color: #6cacf7;
+    box-shadow: 5px 8px 10px #156283;
+}
+
+#soporte:hover {
+    background-color: #9ac4f5;
+    box-shadow: 5px 8px 10px #083649;
+}
+
+/* Ajustes para los íconos */
+.box .icon{
+    position: absolute;
+    right: 10px;
+    width: 100px;
+}
+
+.container-login{
+    display: flex;
+}
+
+.ctn-text{
+    margin: 0px 15px; 
+    border-bottom: #000 5px solid;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 100vh; 
+}
+
+.ctn-form{
+    display: block;
+  
+    margin-bottom: 20px;
+}
+
+.ctn-form form{
+    display: block;
+    width: 100%;
+}
+
+.ctn-form form .input{
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    border-left: #000 5px solid;
+    background-color: #D9D9D9;
+}
+
+.addProduct{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0px; 
+    left: 0px;
+     background-color: rgba(68 ,68 ,68,.6); 
+     z-index: 1000; 
+     display: none;
+}
+
+
+.bg-image{
+  
+    background-image: url("../imagenes/fondodeinicio.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: 100vh;
+
+  
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+@media screen and (max-width: 1000px){
+   
+    .col-60{
+        width:100%;
+    }
+    .col-45{
+        width:100%;
+    }
+    .col-30{
+        width:100%;
+    }
+    
+}
+@media screen and (min-width: 1000px){
+    .col-60{
+        width:62%;
+    }
+   
+    .col-45{
+        width:45%;
+    }
+
+    .col-30{
+        width:30%;
+    }
+    
+}
+
+.card {
+     /* Asegura que las tarjetas ocupen un tercio de la fila */
+   
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+  
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+.icon-card {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+.card-body {
+    padding: 3px;
+    display: flex;
+    flex-direction: column; /* Para alinear el contenido dentro */
+    gap: 10px; /* Espacio entre los elementos */
+    justify-content: start;
+    height: 100%;
+    /* width: 100%!important; */
+    margin: 20px;
+    ;
+}
+.card-title {
+ display: flex;
+ justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+.card-title .close{
+    border: none;
+    background-color: transparent;
+}
+.busqueda {
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;  /* Coloca el botón a la derecha */
+    align-items: center; 
+}
+
+#buscador {
+    width: 55%;  /* Ajusta el ancho del campo de búsqueda, puede cambiarse */
+    padding: 10px;
+    outline: none;
+    border: 5px solid #ffffff;
+    font-weight: 600;
+}
+
+.categoria-btn {
+    width: 150px;  /* Hace que el botÃ³n tenga un ancho similar al del campo de bÃºsqueda */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white; /* Fondo blanco */
+    color: #333; /* Color de texto oscuro */
+    border: 1px solid #ffffff; /* Borde blanco */
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: center; /* Centra el texto y el logo dentro del botón */
+    margin-right: 25px;
+}
+
+.categoria-logo {
+    width: 20px;  /* Ajusta el tamaño del logo */
+    height: 20px;
+    margin-left: 5px;
+}
+
+.categoria-btn:hover {
+    background-color: #f5f5f5; /* Color de fondo gris claro al pasar el ratón */
+    border-color: #a955cf; /* Cambiar borde al pasar el ratón */
+}
+
+.card-2 {
+    width: calc(33.33% - 20px); /* Asegura que las tarjetas ocupen un tercio de la fila */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-top: solid 5px #000;
+    border-bottom:solid 5px #000;
+    box-sizing: border-box;
+}
+
+.card-body-2 {
+    padding: 3px;
+    display: flex;
+    flex-direction: column; /* Para alinear el contenido dentro */
+    justify-content: space-between; /* Para estirar el contenido si es necesario */
+}
+
+.card-imagen{
+    height: 250px;
+    width: 250px;
+    background-color: #beb3b3;
+    padding: 0px;
+    display: flex;
+    flex-direction: column; /* Para alinear el contenido dentro */
+    justify-content: space-between; /* Para estirar el contenido si es necesario */
+}
+
+.card-descripcion{
+   
+   padding: 10px;/* Para estirar el contenido si es necesario */ 
+   font-size: 14px;
+}
+
+.icon-card-2 {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+.row-1{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+.card-3 {
+    width: 48%; /* Ancho fijo */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-bottom:solid 5px #000;
+    box-sizing: border-box;
+    overflow: hidden;  /* Esto evita que el contenido se desborde */
+    min-height: 1100px;  /* Altura mínima para que la tarjeta sea más larga */
+}
+/* En pantallas pequeñas (menos de 768px), las tarjetas ocuparán el 100% del ancho */
+@media (max-width: 768px) {
+    .card-3 {
+        width: 100%;
+    }
+}
+.card-body-3 {
+
+    padding: 0; /* Eliminar cualquier padding innecesario */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; /* Asegurarse de que el contenido ocupe el 100% del ancho */
+
+}
+.card-wide-card{
+    
+}
+.card-imagen-1{
+    height: 460px;
+    width: 100%; /* Aseguramos que la imagen ocupe todo el ancho */
+    background-color: #beb3b3;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.title {
+    margin: 0px; 
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+    padding: 0 10px; /* Puedes ajustar el padding si es necesario */
+}
+.ctn-form-1{
+    display: block;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.ctn-form-1 form{
+    display: block;
+    width: 100%;
+}
+
+
+/* Contenedor para los campos que irán en la misma línea (como Categoría y Cantidad) */
+.input-group {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos en cada línea */
+    gap: 20px;  /* Espacio entre los elementos */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Asegúrate de que los inputs dentro del .input-group tengan un 50% de ancho */
+.input-group .input {
+    width: 48%; /* Ancho del 48% para que ocupen la mitad del contenedor */
+}
+/* Contenedor que agrupa el input y los iconos */
+.input-with-icons {
+    display: flex;
+    justify-content: flex-start;  /* Alinea los elementos al inicio */
+    gap: 10px;  /* Espacio entre los elementos */
+    align-items: center;  /* Alinea verticalmente todos los elementos al centro */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+    flex-wrap: wrap;  /* Permite que los elementos se ajusten si es necesario */
+}
+
+/* Asegúrate de que los íconos tengan un tamaño adecuado y estén alineados */
+.icon-card-3 {
+    cursor: pointer;  /* Opcional: añade un cursor pointer si los íconos son interactivos */
+    height: 30px;  /* Puedes ajustar el tamaño de los íconos según sea necesario */
+    width: 30px;   /* Asegura que los íconos tengan dimensiones proporcionales */
+    display: flex;
+    align-items: center; /* Centra los íconos verticalmente */
+}
+
+/* Ajustar el ancho del input para que se vea bien con los íconos */
+.input-1 {
+    flex-grow: 1; /* Hace que el input ocupe el espacio restante */
+    padding: 10px; /* Añadir algo de padding para mejorar la apariencia */
+    border: none;
+    background-color: #D9D9D9;
+    border-left: #000 5px solid;
+    max-width: calc(100% - 60px);  /* Evita que el campo de texto se desborde cuando haya iconos */
+}
+/* Lo mismo para el contenedor de Precio y Fecha de entrega */
+.input-group-2 {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos en cada línea */
+    gap: 20px;  /* Espacio entre los elementos */
+    width: 100%;
+}
+.input-group-2 .input {
+    width: 48%;
+}
+.input-with-image {
+    position: relative;  /* Necesario para posicionar la imagen en relación al contenedor */
+    width: 100%;
+}
+.input {
+    width: 100%;              /* El input ocupará todo el ancho disponible */
+    padding-left: 10px;       /* Espacio en la izquierda */
+    padding-right: 30px;      /* Espacio para la imagen */
+    border: none;
+    border-left: 5px solid #A955CF;  /* Color del borde */
+}
+
+.title-2{
+    margin: 0px 65px;
+    margin: 0px; 
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+    border-bottom: 5px solid #000; /* Línea inferior */
+    padding: 0 10px; /* Puedes ajustar el padding si es necesario */
+}
+
+
+.busqueda-1 {
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;  /* Alinea los elementos al inicio (izquierda) */
+    align-items: center;
+    position: relative;  /* Esto es necesario para posicionar los iconos */
+    padding-right: 20px;  /* Espacio a la derecha para los botones */
+}
+
+#buscador-1 {
+    width: 70%;  /* Ajusta el ancho del campo de búsqueda */
+    padding: 10px;
+    outline: none;
+    border: 5px solid #ffffff;
+    font-weight: 600;
+    border-radius: 5px;  /* Bordes redondeados para el input */
+    box-sizing: border-box;  /* Para incluir el padding dentro del ancho total */
+}
+
+.busqueda-1 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;  /* Añade un espacio entre los botones */
+}
+
+.busqueda-1 button img {
+    width: 30px;
+    height: 30px;  /* Igualamos el tamaño de las imágenes */
+    transition: transform 0.3s ease;  /* Transición suave al hacer hover */
+}
+
+.busqueda-1 button:hover img {
+    transform: scale(1.1);  /* Efecto de escala al pasar el ratón */
+}
+.card-4 {
+    width: 150%; /* Usa el 100% del contenedor disponible */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-bottom: solid 5px #000;
+    box-sizing: border-box;
+    height: 400px; /* Permite que la tarjeta se ajuste al contenido */
+    min-height: auto; /* Elimina cualquier altura mínima fija */
+}
+.card-body-4 {
+    padding: 3px;
+    display: flex;
+    flex-direction: column; /* Para alinear el contenido dentro */
+    width: 100%;
+    justify-content: space-between; /* Para estirar el contenido si es necesario */
+}
+
+.card-5{
+    display: grid;
+    place-items: center;  /* Centra los elementos dentro de Grid */
+    height: 100%;
+    padding: 20px;
+}
+.card-body-5{ 
+    width: 950px;
+    height: 490px;
+    background-color: #ffffff;
+    margin: auto;         /* Centro dentro del contenedor Grid */
+    display: flex;        /* Usamos flexbox para el contenido */
+    flex-direction: column; /* Alineamos los elementos verticalmente */
+    justify-content: center; /* Centramos verticalmente */
+    align-items: center; /* Centramos horizontalmente */
+    text-align: center; /* Centra el texto dentro del <p> */
+    background-image: url("../imagenes/figurasparaayuda.png");
+    background-position: bottom left;
+    background-size: 50%;
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+.card-body-5::after {
+    content: ""; /* Necesario para crear el pseudo-elemento */
+    position: absolute;
+    top: 0px; /* Ajusta la distancia desde la parte superior */
+    right: 0px; /* Ajusta la distancia desde la derecha */
+    width: 250px; /* Tamaño de la segunda imagen */
+    height: 250px; /* Tamaño de la segunda imagen */
+    background-image: url("../imagenes/figurasparaayuda2.png"); /* Ruta de la segunda imagen */
+    background-size: cover; /* La imagen se ajusta a las dimensiones del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+p {
+    margin: 0; /* Elimina márgenes extra que puedan afectar el centrado */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px; /* Espacio entre el input y el botón */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #16AF89; /* Color para el botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #14a078; /* Efecto de hover para el botón */
+}
