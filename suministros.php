@@ -20,7 +20,7 @@
     <main class="main">
     <?php include 'layout/sidebar.php'; ?>
     <div class="main-content">
-        <div class="busqueda-1">
+        <div class="busqueda">
             <input type="text" name="buscador-1" id="buscador"placeholder="buscar articulos...">
             <!--<ul id="listaArticulos">
                 <li class="articulo">hola</li>
@@ -44,10 +44,10 @@
             </button>
         </div>
         <div class="row">
-            <div class="card-4" style="border-color: #16AF89;">
-                <div class="card-body-4">
+            <div class="card" style="border-color: #16AF89;">
+                <div class="card-body">
                     <h2 class="title" style="border-color: #EC6273;">Generacion de ordenes</h2> </a>
-                    <div class="ctn-form-1">
+                    <div class="ctn-form">
                         <form action="">
                             <p><strong><label for="">Numero de orden</label></strong></p>
                             <input type="number" style="border-color:#B68117;" name="number" class="input"></input> 

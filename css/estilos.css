@@ -570,7 +570,8 @@ a{
     gap: 10px;  /* Espacio entre los elementos */
     align-items: center;  /* Alinea verticalmente todos los elementos al centro */
     width: 100%;  /* Asegura que ocupe todo el ancho disponible */
-    flex-wrap: wrap;  /* Permite que los elementos se ajusten si es necesario */
+    flex-wrap: nowrap; 
+     /* Permite que los elementos se ajusten si es necesario */
 }
 
 /* Asegúrate de que los íconos tengan un tamaño adecuado y estén alineados */
@@ -583,14 +584,7 @@ a{
 }
 
 /* Ajustar el ancho del input para que se vea bien con los íconos */
-.input-1 {
-    flex-grow: 1; /* Hace que el input ocupe el espacio restante */
-    padding: 10px; /* Añadir algo de padding para mejorar la apariencia */
-    border: none;
-    background-color: #D9D9D9;
-    border-left: #000 5px solid;
-    max-width: calc(100% - 60px);  /* Evita que el campo de texto se desborde cuando haya iconos */
-}
+
 /* Lo mismo para el contenedor de Precio y Fecha de entrega */
 .input-group-2 {
     display: flex;
@@ -607,10 +601,10 @@ a{
 }
 .input {
     width: 100%;              /* El input ocupará todo el ancho disponible */
-    padding-left: 10px;       /* Espacio en la izquierda */
-    padding-right: 30px;      /* Espacio para la imagen */
+    padding: 12px;       /* Espacio en la izquierda */
     border: none;
-    border-left: 5px solid #A955CF;  /* Color del borde */
+    border-left: 5px solid #A955CF; 
+    background-color: #D9D9D9; /* Color del borde */
 }
 
 .title-2{
