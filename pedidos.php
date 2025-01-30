@@ -37,17 +37,17 @@
                 <li class="articulo"></li>
             </ul> -->
             <button class="categoria-btn" id="categoria-btn">
-                Crear
+                Actualizar 
             </button>
             <button class="categoria-btn" id="categoria-btn">
-                Actualizacion 
+                Crear
             </button>
         </div>
         <div class="row">
           
             <div class="card col-60" style="border-color: #EC6273;margin: auto;">
                 <div class="card-body">
-                    <h2 class="title-2" style="border-color: #EC6273;">Crear orden</h2> </a>
+                    <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Crear orden</h2> </a>
 
                     <div class="ctn-form">
                         <form action="">
@@ -86,7 +86,7 @@
                 <input type="date" style="border-color: #A955CF;" name="date" class="input"> 
             </div>
         </div>
-                            <h2 class="title-2">Informacion basica</h2> </a>
+                            <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Informacion basica</h2> </a>
 
                             <p><strong><label for="">Nombre completo</label></strong></p>
                             <input type="text" style="border-color:#16AF89;" name="text" class="input"></input> 
@@ -95,11 +95,11 @@
                             <p><strong><label for="">Ubicacion</label></strong></p>
                                 <div class="input-with-image">
                                     <input type="text" style="border-color:#A955CF;" name="text" class="input"> 
-                                    <img src="imagenes/categoria.svg" alt="logo-1"class="categoria-logo"></input> 
                                 </div>
                             <p><strong><label for="">Direccion</label></strong></p>
                             <input type="text" style="border-color: #4A93E9;" name="text" class="input"></input> 
-                        </form>    
+                            <button class="input" style="border: none; background-color: #EC6273">Guardar</button> 
+                        </form>          
                     </div>
                 </div>
             </div>

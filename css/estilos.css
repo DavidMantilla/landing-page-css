@@ -317,8 +317,6 @@ header .account {
     background-repeat: no-repeat;
     width: 50vw;
     height: 100vh;
-
-  
 }
 
 
@@ -447,27 +445,9 @@ a{
     border-color: #a955cf; /* Cambiar borde al pasar el ratón */
 }
 
-.card-2 {
-    width: calc(33.33% - 20px); /* Asegura que las tarjetas ocupen un tercio de la fila */
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    border-top: solid 5px #000;
-    border-bottom:solid 5px #000;
-    box-sizing: border-box;
-}
-
-.card-body-2 {
-    padding: 3px;
-    display: flex;
-    flex-direction: column; /* Para alinear el contenido dentro */
-    justify-content: space-between; /* Para estirar el contenido si es necesario */
-}
-
 .card-imagen{
     height: 250px;
-    width: 250px;
+    width: 100%;
     background-color: #beb3b3;
     padding: 0px;
     display: flex;
@@ -481,75 +461,11 @@ a{
    font-size: 14px;
 }
 
-.icon-card-2 {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 50%;
-    float: left;
-    margin-right: 20px;
-}
-.row-1{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px; /* Espacio entre las tarjetas */
-}
-.card-3 {
-    width: 48%; /* Ancho fijo */
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    border-bottom:solid 5px #000;
-    box-sizing: border-box;
-    overflow: hidden;  /* Esto evita que el contenido se desborde */
-    min-height: 1100px;  /* Altura mínima para que la tarjeta sea más larga */
-}
-/* En pantallas pequeñas (menos de 768px), las tarjetas ocuparán el 100% del ancho */
-@media (max-width: 768px) {
-    .card-3 {
-        width: 100%;
-    }
-}
-.card-body-3 {
-
-    padding: 0; /* Eliminar cualquier padding innecesario */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%; /* Asegurarse de que el contenido ocupe el 100% del ancho */
-
-}
-.card-wide-card{
-    
-}
-.card-imagen-1{
-    height: 460px;
-    width: 100%; /* Aseguramos que la imagen ocupe todo el ancho */
-    background-color: #beb3b3;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between
-}
 .title {
     margin: 0px; 
     width: 100%; /* Aseguramos que ocupe todo el ancho */
     padding: 0 10px; /* Puedes ajustar el padding si es necesario */
 }
-.ctn-form-1{
-    display: block;
-    height: 500px;
-    margin-bottom: 20px;
-}
-
-.ctn-form-1 form{
-    display: block;
-    width: 100%;
-}
-
 
 /* Contenedor para los campos que irán en la misma línea (como Categoría y Cantidad) */
 .input-group {
@@ -574,25 +490,14 @@ a{
      /* Permite que los elementos se ajusten si es necesario */
 }
 
-/* Asegúrate de que los íconos tengan un tamaño adecuado y estén alineados */
-.icon-card-3 {
-    cursor: pointer;  /* Opcional: añade un cursor pointer si los íconos son interactivos */
-    height: 30px;  /* Puedes ajustar el tamaño de los íconos según sea necesario */
-    width: 30px;   /* Asegura que los íconos tengan dimensiones proporcionales */
-    display: flex;
-    align-items: center; /* Centra los íconos verticalmente */
-}
-
-/* Ajustar el ancho del input para que se vea bien con los íconos */
-
 /* Lo mismo para el contenedor de Precio y Fecha de entrega */
-.input-group-2 {
+.input-group {
     display: flex;
     justify-content: space-between; /* Alinea los elementos en cada línea */
     gap: 20px;  /* Espacio entre los elementos */
     width: 100%;
 }
-.input-group-2 .input {
+.input-group .input {
     width: 48%;
 }
 .input-with-image {
@@ -615,61 +520,6 @@ a{
     padding: 0 10px; /* Puedes ajustar el padding si es necesario */
 }
 
-
-.busqueda-1 {
-    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
-    height: 50px;
-    display: flex;
-    justify-content: flex-start;  /* Alinea los elementos al inicio (izquierda) */
-    align-items: center;
-    position: relative;  /* Esto es necesario para posicionar los iconos */
-    padding-right: 20px;  /* Espacio a la derecha para los botones */
-}
-
-#buscador-1 {
-    width: 70%;  /* Ajusta el ancho del campo de búsqueda */
-    padding: 10px;
-    outline: none;
-    border: 5px solid #ffffff;
-    font-weight: 600;
-    border-radius: 5px;  /* Bordes redondeados para el input */
-    box-sizing: border-box;  /* Para incluir el padding dentro del ancho total */
-}
-
-.busqueda-1 button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;  /* Añade un espacio entre los botones */
-}
-
-.busqueda-1 button img {
-    width: 30px;
-    height: 30px;  /* Igualamos el tamaño de las imágenes */
-    transition: transform 0.3s ease;  /* Transición suave al hacer hover */
-}
-
-.busqueda-1 button:hover img {
-    transform: scale(1.1);  /* Efecto de escala al pasar el ratón */
-}
-.card-4 {
-    width: 150%; /* Usa el 100% del contenedor disponible */
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    border-bottom: solid 5px #000;
-    box-sizing: border-box;
-    height: 400px; /* Permite que la tarjeta se ajuste al contenido */
-    min-height: auto; /* Elimina cualquier altura mínima fija */
-}
-.card-body-4 {
-    padding: 3px;
-    display: flex;
-    flex-direction: column; /* Para alinear el contenido dentro */
-    width: 100%;
-    justify-content: space-between; /* Para estirar el contenido si es necesario */
-}
 
 .card-5{
     display: grid;

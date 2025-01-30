@@ -47,7 +47,7 @@
                     <div class="card col-60" style="border-color: #16AF89; height: 90vh; margin: auto; overflow-y: scroll;">
                           <div class="card-title"> <h2>nuevo producto </h2>  <button class="close" onclick="cerrar()">X</button></div>
                            <div class="card-body" style="padding: 20px;">
-                            <h2 class="title-2" style="border-color: #16AF89;">Producto</h2> </a>
+                            <h2 class="title-2" style="border-color: #16AF89; text-align: center;">Producto</h2> </a>
 
                             <div class="ctn-form">
                                 <form action="">

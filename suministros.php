@@ -36,69 +36,26 @@
                 <li class="articulo"></li>
                 <li class="articulo"></li>
             </ul> -->
-            <button>
-            <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card-4">
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+            <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
             </button>
-            <button>
-            <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card-5">
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+            <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
+            </button>
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+            <img src="imagenes/vision.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
             </button>
         </div>
         <div class="row">
             <div class="card" style="border-color: #16AF89;">
                 <div class="card-body">
-                    <h2 class="title" style="border-color: #EC6273;">Generacion de ordenes</h2> </a>
-                    <div class="ctn-form">
-                        <form action="">
-                            <p><strong><label for="">Numero de orden</label></strong></p>
-                            <input type="number" style="border-color:#B68117;" name="number" class="input"></input> 
-                            <p><strong><label for="">Datos del cliente</label></strong></p>
-                            <input type="text" style="border-color: #EC6273;" name="text" class="input"></input> 
-                            <p><strong><label for="">Datos del producto</label></strong></p>
-                                <div class="input-with-icons">
-                                    <input type="text" style="border-color:#A955CF;" name="text" class="input"></input> 
-                                    <img src="imagenes/ganancias.svg" alt="Editar" srcset="" width="30px" class="icon-card-3">
-                                    <p><strong>Precio</strong></p>
-                                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            <button>
-                <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card-4">
-            </button>
-            <button>
-                <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card-5">
-            </button>
-
-        <div class="row">
-            <div class="card" style="border-color: #16AF89;">
-                <div class="card-body">
-                    <h2 class="title" style="border-color: #EC6273;">Historial de Pedidos</h2> </a>
+                    <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Historial de Pedidos</h2> </a>
                     <div class="ctn-form">
                         <form action="">
                             <p><strong><label for="">Numero de orden</label></strong></p>
                                 <div class="input-with-icons">
                                     <input type="number" style="border-color:#A955CF;" name="number" class="input"></input> 
-                                    <img src="imagenes/check.svg" alt="Editar" srcset="" width="30px" class="icon-card-3">
-                                    <p><strong>Completado</strong></p>
-                                </div>
-                            <p><strong><label for="">Datos del cliente</label></strong></p>
-                            <input type="text" style="border-color: #EC6273;" name="text" class="input"></input> 
-                            <p><strong><label for="">Datos del producto</label></strong></p>
-                                <div class="input-with-icons">
-                                    <input type="text" style="border-color:#A955CF;" name="text" class="input"></input> 
-                                    <img src="imagenes/ganancias.svg" alt="Editar" srcset="" width="30px" class="icon-card-3">
-                                    <p><strong>Precio</strong></p>
-                                </div>
-
-                    <div class="ctn-form">
-                        <form action="">
-                            
-                            <p><strong><label for="">Numero de orden</label></strong></p>
-                                <div class="input-with-icons">
-                                    <input type="number" style="border-color:#A955CF;" name="number" class="input"></input> 
-                                    <img src="imagenes/cancelado.svg" alt="Editar" srcset="" width="30px" class="icon-card-3">
+                                    <img src="imagenes/check.svg" alt="Editar" srcset="" width="30px" class="icon-card">
                                     <p><strong>Cancelado</strong></p>
                                 </div>
                             <p><strong><label for="">Datos del cliente</label></strong></p>
@@ -106,7 +63,42 @@
                             <p><strong><label for="">Datos del producto</label></strong></p>
                                 <div class="input-with-icons">
                                     <input type="text" style="border-color:#A955CF;" name="text" class="input"></input> 
-                                    <img src="imagenes/ganancias.svg" alt="Editar" srcset="" width="30px" class="icon-card-3">
+                                    <img src="imagenes/ganancias.svg" alt="Editar" srcset="" width="30px" class="icon-card">
+                                    <p><strong>Precio</strong></p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+                <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
+            </button>
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+                <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
+            </button>
+            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+            <img src="imagenes/vision.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
+            </button>
+
+        <div class="row">
+            <div class="card" style="border-color: #16AF89;">
+                <div class="card-body">
+                    <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Historial de Pedidos</h2> </a>
+                    <div class="ctn-form">
+                        <form action="">
+                            <p><strong><label for="">Numero de orden</label></strong></p>
+                                <div class="input-with-icons">
+                                    <input type="number" style="border-color:#A955CF;" name="number" class="input"></input> 
+                                    <img src="imagenes/cancelado.svg" alt="Editar" srcset="" width="30px" class="icon-card">
+                                    <p><strong>Cancelado</strong></p>
+                                </div>
+                            <p><strong><label for="">Datos del cliente</label></strong></p>
+                            <input type="text" style="border-color: #EC6273;" name="text" class="input"></input> 
+                            <p><strong><label for="">Datos del producto</label></strong></p>
+                                <div class="input-with-icons">
+                                    <input type="text" style="border-color:#A955CF;" name="text" class="input"></input> 
+                                    <img src="imagenes/ganancias.svg" alt="Editar" srcset="" width="30px" class="icon-card">
                                     <p><strong>Precio</strong></p>
                                 </div>    
                     </div>
