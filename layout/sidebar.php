@@ -21,7 +21,7 @@
                                 <div class="barra"></div>
                                     <a class="nav-link" href="./pedidos.php">
                                        <img class="icon icon-pedidos" src="./imagenes/Pedidos.svg" alt="">
-                                       Pedidos
+                                       Ventas
                                     </a>
                             </li>
                             <li class="nav-item">

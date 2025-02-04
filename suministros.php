@@ -36,27 +36,32 @@
                 <li class="articulo"></li>
                 <li class="articulo"></li>
             </ul> -->
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-            <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
-            </button>
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-            <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
-            </button>
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-            <img src="imagenes/vision.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
+            <button class="categoria-btn" id="categoria-btn">
+                nuevo pedido
             </button>
         </div>
         <div class="row">
             <div class="card" style="border-color: #16AF89;">
                 <div class="card-body">
-                    <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Historial de Pedidos</h2> </a>
+                    <div style="display: flex; align-items: center; justify-content: center;"> 
+                        <h2 class="title-2" style="border-color: #EC6273; text-align: center margin-right: 20px;">Historial de Pedidos</h2> </a>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px margin-left:10px;">
+                        <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="20px" class="icon-card">
+                        </button>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+                        <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="20px" class="icon-card">
+                        </button>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px">
+                        <a href="./pedidos.php"><img src="imagenes/vision.svg" alt="Añadir" srcset="" width="20px" class="icon-card"></a>
+                        </button>
+                    </div>
                     <div class="ctn-form">
                         <form action="">
                             <p><strong><label for="">Numero de orden</label></strong></p>
                                 <div class="input-with-icons">
-                                    <input type="number" style="border-color:#A955CF;" name="number" class="input"></input> 
+                                    <input type="text" style="border-color:#A955CF;" name="number" class="input"></input> 
                                     <img src="imagenes/check.svg" alt="Editar" srcset="" width="30px" class="icon-card">
-                                    <p><strong>Cancelado</strong></p>
+                                    <p><strong>completado</strong></p>
                                 </div>
                             <p><strong><label for="">Datos del cliente</label></strong></p>
                             <input type="text" style="border-color: #EC6273;" name="text" class="input"></input> 
@@ -71,25 +76,26 @@
             </div>
         </div>
 
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-                <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
-            </button>
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-                <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
-            </button>
-            <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
-            <img src="imagenes/vision.svg" alt="Añadir" srcset="" width="30px" class="icon-card">
-            </button>
-
         <div class="row">
             <div class="card" style="border-color: #16AF89;">
                 <div class="card-body">
-                    <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Historial de Pedidos</h2> </a>
+                    <div style="display: flex; align-items: center; justify-content: center;"> 
+                        <h2 class="title-2" style="border-color: #EC6273; text-align: center;">Historial de Pedidos</h2> </a>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px margin-left:10px;">
+                        <img src="imagenes/imprimir.svg" alt="Añadir" srcset="" width="20px" class="icon-card">
+                        </button>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px;">
+                        <img src="imagenes/descargas.svg" alt="Añadir" srcset="" width="20px" class="icon-card">
+                        </button>
+                        <button class="categoria-btn" style="border: none; background-color: none; width: 95px">
+                        <img src="imagenes/vision.svg" alt="Añadir" srcset="" width="20px" class="icon-card">
+                        </button>
+                    </div>
                     <div class="ctn-form">
                         <form action="">
                             <p><strong><label for="">Numero de orden</label></strong></p>
                                 <div class="input-with-icons">
-                                    <input type="number" style="border-color:#A955CF;" name="number" class="input"></input> 
+                                    <input type="text" style="border-color:#A955CF;" name="number" class="input"></input> 
                                     <img src="imagenes/cancelado.svg" alt="Editar" srcset="" width="30px" class="icon-card">
                                     <p><strong>Cancelado</strong></p>
                                 </div>

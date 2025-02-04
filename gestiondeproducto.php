@@ -31,6 +31,9 @@
                     <option value="">cate3</option>
                 </select>
 
+                <button class="categoria-btn" id="crearcategoria">
+                    nueva categoria
+                </button> 
                 <button class="categoria-btn" id="crearProducto">
                     Crear
                 </button>
