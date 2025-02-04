@@ -22,7 +22,7 @@
         <div class="main-content " style="z-index: auto;">
             <div class="busqueda">
                 <input type="text" name="buscador" id="buscador" placeholder="buscar articulos...">
-             
+                  &nbsp;  &nbsp;  &nbsp;
                 <select class="categoria-btn" id="categoria-btn">
                     Categoria
                     <option selected value="">Categorias</option>
@@ -33,7 +33,7 @@
 
                 <button class="categoria-btn" id="crearcategoria">
                     nueva categoria
-                </button> 
+                </button>
                 <button class="categoria-btn" id="crearProducto">
                     Crear
                 </button>
@@ -45,11 +45,13 @@
                 </div>
             </div>
 
-            <div class="addProduct" style=" " id="addProduct" >
+            <div class="addProduct" style=" " id="addProduct">
                 <div class="row" style=" margin-top: 10px;">
                     <div class="card col-60" style="border-color: #16AF89; height: 90vh; margin: auto; overflow-y: scroll;">
-                          <div class="card-title"> <h2>nuevo producto </h2>  <button class="close" onclick="cerrar()">X</button></div>
-                           <div class="card-body" style="padding: 20px;">
+                        <div class="card-title">
+                            <h2>nuevo producto </h2> <button class="close" onclick="cerrar('addProduct')">X</button>
+                        </div>
+                        <div class="card-body" style="padding: 20px;">
                             <h2 class="title-2" style="border-color: #16AF89; text-align: center;">Producto</h2> </a>
 
                             <div class="ctn-form">
@@ -79,18 +81,39 @@
                     </div>
                 </div>
             </div>
+
+            <div class="addProduct" style=" " id="addCategoria">
+                <div class="row" style=" margin-top: 10px;">
+                    <div class="card col-60" style="border-color: #16AF89; height: 90vh; margin: auto; overflow-y: scroll;">
+                        <div class="card-title">
+                            <h2>nueva Categoria </h2> <button class="close" onclick="cerrar('addCategoria')">X</button>
+                        </div>
+                        <div class="card-body" style="padding: 20px;">
+                           
+
+                            <div class="ctn-form">
+                                <form action="">
+                                <p><strong><label for="">Nombre</label></strong></p>
+                                <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
+                                <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
     </main>
 </div>
 
 <script>
+    let cerrar = (id) => {
 
-
-let cerrar = () => {
-
-    let add = document.getElementById('addProduct');
-    add.style.display = 'none';
-}
+        let add = document.getElementById(id);
+        add.style.display = 'none';
+    }
     document.getElementById('crearProducto').addEventListener('click', () => {
 
         let add = document.getElementById('addProduct');
@@ -98,6 +121,13 @@ let cerrar = () => {
 
     });
 
+
+    document.getElementById('crearcategoria').addEventListener('click', () => {
+
+        let add = document.getElementById('addCategoria');
+        add.style.display = 'block';
+
+    });
     let colores = ['#16AF89', '#B68117', '#EC6273'];
     let colorA = 0;
 

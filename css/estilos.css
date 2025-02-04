@@ -107,6 +107,20 @@ header .account {
     opacity: 1; /* Asegura que la barra sea visible */
 } 
 
+.link-btn{
+
+    border: none; 
+    background: none; 
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+.link-btn:hover,.link-btn:active{
+    font-weight: 500 !important;
+    background-color: #A955CF !important;
+}
+
+
 /* Estilo de los enlaces */
 .nav-link{ 
     position: relative;
@@ -305,6 +319,8 @@ header .account {
      background-color: rgba(68 ,68 ,68,.6); 
      z-index: 1000; 
      display: none;
+     overflow-y: auto;
+
 }
 
 .addcliente{
@@ -316,6 +332,7 @@ header .account {
      background-color: rgba(68 ,68 ,68,.6); 
      z-index: 1000; 
      display: none;
+     overflow-y: auto;
 }
 .addproveedor{
     width: 100%;
@@ -326,6 +343,7 @@ header .account {
      background-color: rgba(68 ,68 ,68,.6); 
      z-index: 1000; 
      display: none;
+     overflow-y: auto;
 }
 .bg-image{
   
