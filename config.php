@@ -2,10 +2,11 @@
 $db= [
 
     "host" => "localhost",
-    "dbname" => "inventario",
+    "dbname" => "inventariodb",
     "user"  => "root",
-    "password" => ""
+    "password" => "9321"
 ];
 
+return $db;
 
 ?>

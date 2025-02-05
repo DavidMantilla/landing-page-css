@@ -3,19 +3,21 @@
 
 
 <?php
-include '../modelo/model.php';
+include 'modelo/model.php';
 
  class controller{
      private $model;
-     private $conexion;
+    
      public function __construct() {
             $this->model = new model();
         }   
     
     public function get($param){
+      
         $conexion=$this->model->conexion;
-        if($param == 'pedidos'){
-            $sql = "SELECT * FROM pedidos";
+        if($param == '/pedidos'){
+           
+            $sql = "SELECT * FROM orden";
             $result = $conexion->query($sql);
             $pedidos = [];
             if ($result->num_rows > 0) {
@@ -27,12 +29,19 @@ include '../modelo/model.php';
         }
     }
 
+    
+    
+    
     public function post($param){
         if($param == 'pedidos'){
-            $this->crearPedido();
+            //$this->crearPedido();
         }
     }
 
+    
 
- }
+    
+    
+};
+
 ?>
