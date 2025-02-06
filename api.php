@@ -12,6 +12,14 @@ $routes['GET']['/clientes'] = [$clientes, 'obtener_clientes'];
 $routes['GET']['/clientes/:id'] = [$clientes, 'buscar_cliente'];
 $routes['POST']['/clientes'] = [$clientes, 'insertar'];
 $routes['POST']['/clientes/:id'] = [$clientes, 'actualizar'];
+$routes['GET']['/factura'] = [$factura, 'obtener_factura'];
+$routes['GET']['/factura/:id'] = [$factura, 'buscar_factura'];
+$routes['POST']['/factura'] = [$factura, 'insertar'];
+$routes['POST']['/factura/:id'] = [$factura, 'actualizar'];
+$routes['GET']['/tipo_pago'] = [$factura, 'obtener_tipo_pago'];
+$routes['GET']['/tipo_pago/:id'] = [$factura, 'buscar_tipo_pago'];
+$routes['POST']['/tipo_pago'] = [$factura, 'insertar'];
+$routes['POST']['/tipo_pago/:id'] = [$factura, 'actualizar'];
 
 
 

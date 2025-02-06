@@ -20,35 +20,33 @@ class controllerClientes
     public function obtener_clientes()
     {
 
-        
 
         $sql = "SELECT * FROM $this->table";
         $result = $this->conexion->query($sql);
-        $pedidos = [];
+        $cliente = [];
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $pedidos[] = $row;
+                $cliente[] = $row;
             }
         }
-        echo json_encode($pedidos);
+        echo json_encode($cliente);
     }
 
 
     public function buscar_cliente($id)
     {
       
-        $conexion = $this->model->conexion;
 
         $sql = "SELECT * FROM $this->table where $this->id=".$id;
         $result = $this->conexion->query($sql);
       
-        $pedidos = [];
+        $cliente = [];
         if ($result->num_rows > 0) {
             $row = $result->fetch_row();
-                $pedidos = $row;
+                $cliente = $row;
             
         }
-        echo json_encode($pedidos);
+        echo json_encode($cliente);
     }
 
 

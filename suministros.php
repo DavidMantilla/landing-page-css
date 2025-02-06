@@ -25,10 +25,10 @@
                 &nbsp;
               
                 <button class="categoria-btn" id="categoria-btn-prov">
-                    crear provedor
+                    Crear provedor
                 </button>
                 <button class="categoria-btn" id="nuevopedido">
-                    nuevo pedido
+                    Nuevo pedido
                 </button>
             </div>
             <div class="row">
@@ -82,16 +82,24 @@
                             <div class="ctn-form">
                                 <form action="">
 
+                                    &nbsp;
                                     <p><strong><label for="">Nombre completo</label></strong></p>
-                                    <input type="text" style="border-color:#16AF89;" name="text" class="input"></input>
+                                    <input type="text" style="border-color: #16AF89;" name="text" class="input"></input>
+                                    &nbsp;
                                     <p><strong><label for="">Celular</label></strong></p>
                                     <input type="tel" style="border-color: #B68117;" name="telefono" class="input"></input>
+                                    &nbsp;
                                     <p><strong><label for="">Ubicacion</label></strong></p>
                                     <div class="input-with-image">
                                         <input type="text" style="border-color:#A955CF;" name="text" class="input">
                                     </div>
+                                    &nbsp;
                                     <p><strong><label for="">Direccion</label></strong></p>
                                     <input type="text" style="border-color: #4A93E9;" name="text" class="input"></input>
+                                    &nbsp;
+                                    <p><strong><label for="">correo</label></strong></p>
+                                    <input type="email" style="border-color: #16AF89;" name="email" class="input"></input>
+                                    &nbsp;
                                     <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                                 </form>
                             </div>
@@ -112,6 +120,7 @@
                         <div class="ctn-form">
                             <form action="">
 
+                                &nbsp;
                                 <p><strong><label for="">Nombre completo</label></strong></p>
                                 <input type="text" style="border-color:#16AF89;" name="text" class="input"></input>
                                 <p><strong><label for="">Celular</label></strong></p>
@@ -122,6 +131,8 @@
                                 </div>
                                 <p><strong><label for="">Direccion</label></strong></p>
                                 <input type="text" style="border-color: #4A93E9;" name="text" class="input"></input>
+                                <p><strong><label for="">correo</label></strong></p>
+                                <input type="email" style="border-color: #16AF89;" name="email" class="input"></input>
                                 <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                             </form>
                         </div>
@@ -140,28 +151,29 @@
 
                         <div class="ctn-form">
                             <form action="">
-                                <p><strong><label for="">Id de venta</label></strong></p>
-                                <input type="number" style="border-color:#B68117;" name="numero" class="input"></input>
-                                <p><strong><label for="">Id de factura</label></strong></p>
-                                <input type="number" style="border-color:#4A93E9;" name="number" class="input"></input>
-                                <p><strong><label for="">Id de pedido</label></strong></p>
-                                <input type="number" style="border-color: #A955CF;" name="number" class="input"></input>
-                                <p><strong><label for="">Tipo de pago</label></strong></p>
-                                <input type="text" style="border-color:#16AF89;" name="text" class="input"></input>
+                            <p><strong><label for="">Proveedor</label></strong></p>
+                                <input type="text" style="border-color:#B68117;" name="numero" class="input"></input>
                                 <p><strong><label for="">Fecha de entrega</label></strong></p>
                                 <input type="date" style="border-color: #A955CF;" name="date" class="input">
+                                <select class="categoria-btn" id="categoria-btn" style="border-left: 5px solid  #4A93E9;">
+                                    pago  
+                                    <option selected value="">tipo de pago</option>
+                                    <option value="">efectivo</option>
+                                    <option value="">tarjeta</option>
+                                    </select>
+                                &nbsp;
                                 <div class="input-group">
                                     <div>
                                         <p><strong><label for="">Articulo</label></strong></p>
-                                        <input type="text" style="border-color: #B68117;" name="text" class="input"></input>
+                                        <input type="text" style="border-color: #16AF89;" name="text" class="input"></input>
                                     </div>
                                     <div>
                                         <p><strong><label for="">Cantidad</label></strong></p>
-                                        <input type="number" style="border-color:#A955CF;" name="number" class="input">
+                                        <input type="number" style="border-color:#B68117;" name="number" class="input">
                                     </div>
                                     <div>
                                         <p><strong><label for="">Precio</label></strong></p>
-                                        <input type="text" style="border-color: #EC6273;" name="number" class="input">
+                                        <input type="text" style="border-color: #A955CF;" name="number" class="input">
                                     </div>
                                     <div class="input-with-icons">
                                        <button  type="button" class="link-btn"> <img src="imagenes/añadir.svg" alt="Añadir" srcset="" width="30px" class="icon-card"></button>
@@ -197,7 +209,14 @@
                                             <td><button class="link-btn" type="button">X</button></td>
                                         </tr>
                                     </table>
+                                    &nbsp;
                                 </div>
+                                <p><strong><label for="">Subtotal</label></strong></p>
+                                <input type="number" style="border-color:#16AF89;" name="number" class="input"></input>
+                                <p><strong><label for="">Iva</label></strong></p>
+                                <input type="number" style="border-color: #B68117;" name="number" class="input"></input>
+                                <p><strong><label for="">Total</label></strong></p>
+                                <input type="text" style="border-color:#A955CF;" name="text" class="input"></input>
                                 <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                             </form>
                         </div>
