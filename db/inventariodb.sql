@@ -60,8 +60,10 @@ CREATE TABLE `factura` (
 --
 
 CREATE TABLE `factura_productos` (
+  `id_fact_prod` int(11) primary key NULL,
   `id_factura` int(11) DEFAULT NULL,
-  `id_producto` int(11) DEFAULT NULL
+  `id_producto` int(11) DEFAULT NULL,
+  `cantidad`      int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -88,8 +90,10 @@ CREATE TABLE `orden` (
 --
 
 CREATE TABLE `orden_productos` (
+  `id_orden_prod` int(11) primary KEY NULL,
   `id_orden` int(11) DEFAULT NULL,
-  `id_producto` int(11) DEFAULT NULL
+  `id_producto` int(11) DEFAULT NULL,
+  `cantidad`      int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------

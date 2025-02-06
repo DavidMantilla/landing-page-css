@@ -32,6 +32,22 @@ class controllerClientes
         echo json_encode($cliente);
     }
 
+    public function productos_agrupados()
+    {
+
+        
+
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conexion->query($sql);
+        $pedidos = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $pedidos[] = $row;
+            }
+        }
+        echo json_encode($pedidos);
+    }
+
 
     public function buscar_cliente($id)
     {
