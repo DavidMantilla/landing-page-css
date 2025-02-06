@@ -1,4 +1,4 @@
-// hacer la conexion al la base de de datos
+
 
 <?php
 

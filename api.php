@@ -1,13 +1,79 @@
 
 <?php
-include("./contollers/controller.php");
-$controller= new controller();
+include("./contollers/controllerCliente.php");
+$clientes = new controllerClientes();
 
-if($_SERVER['REQUEST_METHOD']== "GET"){
- $controller->get($_SERVER['PATH_INFO']);
-}else{
-    $controller->post($_SERVER['PATH_INFO']);
+
+$routes = [];
+
+// clientes
+$routes['GET']['/clientes'] = [$clientes, 'obtener_clientes'];
+$routes['GET']['/clientes/:id'] = [$clientes, 'buscar_cliente'];
+$routes['POST']['/clientes'] = [$clientes, 'insertar'];
+$routes['POST']['/clientes/:id'] = [$clientes, 'actualizar'];
+
+
+
+
+
+
+//$result = $routes['GET']['/clientes'][0]->obtener_clientes();
+
+function dispatch($routes){
+       
+    $method= $_SERVER["REQUEST_METHOD"];
+    $path= $_SERVER['PATH_INFO'];
+    foreach($routes[$method] as $route=> $v){
+
+        if(strpos($route,':')!== false){
+
+            $alpha='([a-zA-Z 0-9 - :]*)';
+            $letra='[a-zA-Z]+';
+            
+           $route=preg_replace('#:'.$letra.'+#',$alpha, $route);   
+          
+          
+       }
+       
+        
+        if(preg_match('#^'.$route.'$#', $path,$matches)){
+            $valores=array_slice($matches, 1);
+            
+            $v[0]->{$v[1]}(...$valores);
+        }
+       
+         
+    }
 }
-print_r($_SERVER['PATH_INFO']);
+
+dispatch($routes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function get($param){}
+
+
+
+// if($_SERVER['REQUEST_METHOD']== "GET"){
+//  get($_SERVER['PATH_INFO']);
+// }else{
+//     $controller->post($_SERVER['PATH_INFO']);
+// }
+// print_r($_SERVER['PATH_INFO']);
 
 ?>
+
+
