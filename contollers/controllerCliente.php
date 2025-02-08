@@ -2,8 +2,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerClientes
-{
+class controllerCliente{
     private $model;
     private $conexion;
     private $table;

@@ -1,8 +1,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerfactura
-{
+class Controllerfactura {
     private $model;
     private $conexion;
     private $table;
@@ -96,7 +95,6 @@ class controllerfactura
          echo "soy un mensaje post";
     }
 };
-
 
 
 ?>

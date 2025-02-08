@@ -39,9 +39,9 @@
                 </div>
                 <div class="card col-30" style= "border-left: solid 5px #EC6273;">
                     <div class="card-body">
-                        <p><strong>Solicitudes pendientes</strong></p>
+                        <p><strong>producto abastecido</strong></p>
                         <div style="display: flex; justify-content:flex-start; align-items: center;"> <img src="imagenes/solicitudespendientes.svg" alt="" srcset="" width="30px" class="icon-card">
-                            <span style="color:#EC6273"><?php echo ('cantidades') ?></span>
+                            <span style="color:#EC6273"><?php echo ('nombredelproducto') ?></span>
                         </div>
                     </div>
                 </div>

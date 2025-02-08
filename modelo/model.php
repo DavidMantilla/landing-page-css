@@ -1,19 +1,22 @@
-
-
 <?php
+class Model {
+    public $conexion; // Asegúrate de que esta propiedad esté definida
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = ""; // Asegúrate de que la contraseña sea correcta
+    private $dbname = "inventariodb";
 
-class model
-{
-    public $conexion;
+    public function __construct() {
+        // Crear conexión
+        $this->conexion = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 
-    public function __construct()
-    {
-        $db = include 'config.php';
-        $this->conexion = new mysqli($db['host'], $db['user'], $db['password'], $db['dbname']);
+        // Verificar conexión
         if ($this->conexion->connect_error) {
-            die('Error en la conexion' . $this->conexion->connect_error);
+            die("Conexión fallida: " . $this->conexion->connect_error);
         }
     }
+
+    // Agrega métodos adicionales para interactuar con la base de datos
 }
 
 ?>

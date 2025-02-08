@@ -1,7 +1,7 @@
 
 <?php
 include("./contollers/controllerCliente.php");
-$clientes = new controllerClientes();
+$clientes = new controllerCliente();
 include("./controllers/controllerFactura.php");
 $factura = new ControllerFactura();
 include("./contollers/controllerTipo_pago.php");
