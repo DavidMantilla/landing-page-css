@@ -1,7 +1,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerClientes
+class controllerProducto
 {
     private $model;
     private $conexion;
@@ -16,7 +16,7 @@ class controllerClientes
         $this->id="id_producto";
     }
 
-    public function obtener_factura()
+    public function obtener_producto()
     {
 
 
@@ -32,7 +32,7 @@ class controllerClientes
     }
 
 
-    public function buscar_factura($id)
+    public function buscar_producto($id)
     {
 
         $sql = "SELECT * FROM $this->table where $this->id=".$id;
@@ -47,6 +47,21 @@ class controllerClientes
         echo json_encode($producto);
     }
 
+    public function producto_agrupados()
+    {
+
+        
+
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conexion->query($sql);
+        $producto = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $producto[] = $row;
+            }
+        }
+        echo json_encode($producto);
+    }
 
     public function insertar()
     {   

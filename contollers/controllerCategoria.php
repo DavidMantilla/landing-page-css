@@ -1,7 +1,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerClientes
+class controllerCategoria
 {
     private $model;
     private $conexion;
@@ -16,7 +16,7 @@ class controllerClientes
         $this->id="id_categoria";
     }
 
-    public function obtener_tipo_pago()
+    public function obtener_categoria()
     {
 
         
@@ -33,7 +33,7 @@ class controllerClientes
     }
 
 
-    public function buscar_tipo_pago($id)
+    public function buscar_categoria($id)
     {
       
 
@@ -50,6 +50,21 @@ class controllerClientes
         echo json_encode($categoria);
     }
 
+    public function categoria_agrupados()
+    {
+
+        
+
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conexion->query($sql);
+        $categoria = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $categoria[] = $row;
+            }
+        }
+        echo json_encode($categoria);
+    }
 
     public function insertar()
     {   

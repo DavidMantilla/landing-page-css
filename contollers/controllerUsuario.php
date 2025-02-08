@@ -1,7 +1,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerClientes
+class controllerusuario
 {
     private $model;
     private $conexion;
@@ -31,6 +31,23 @@ class controllerClientes
         }
         echo json_encode($usuario);
     }
+
+    public function usuario_agrupados()
+    {
+
+        
+
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conexion->query($sql);
+        $usuario = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $usuario[] = $row;
+            }
+        }
+        echo json_encode($usuario);
+    }
+
 
 
     public function buscar_usuario($id)

@@ -1,7 +1,7 @@
 <?php
 include 'modelo/model.php';
 
-class controllerClientes
+class controllerfactura
 {
     private $model;
     private $conexion;
@@ -47,6 +47,21 @@ class controllerClientes
         echo json_encode($factura);
     }
 
+    public function factura_agrupados()
+    {
+
+        
+
+        $sql = "SELECT * FROM $this->table";
+        $result = $this->conexion->query($sql);
+        $factura = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $factura[] = $row;
+            }
+        }
+        echo json_encode($factura);
+    }
 
     public function insertar()
     {   
@@ -56,8 +71,9 @@ class controllerClientes
         $subtotal=$_REQUEST["subtotal"];
         $iva=$_REQUEST["iva"];
         $total=$_REQUEST["total"];
+        $tipo_pago=$_REQUEST["tipo_pago"];
 
-        $sql = "INSERT INTO $this->table (cliente,fecha,empleado,subtotal,iva,total) values( '$cliente','$fecha','$empleado','$subtotal','$iva','$total')";
+        $sql = "INSERT INTO $this->table (cliente,fecha,empleado,subtotal,iva,total, tipo_pago) values( '$cliente','$fecha','$empleado','$subtotal','$iva','$total', '$tipo_pago')";
         print_r($sql);
         $result = $this->conexion->query($sql);  
          print($result);
@@ -72,8 +88,9 @@ class controllerClientes
         $subtotal=$_REQUEST["subtotal"];
         $iva=$_REQUEST["iva"];
         $total=$_REQUEST["total"];
+        $tipo_pago=$_REQUEST["tipo_pago"];
 
-        $sql = "update $this->table set cliente= '$cliente', fecha='$fecha', empleado='$empleado',subtotal='$subtotal',iva='$iva', total='$total' where $this->id= $id ";
+        $sql = "update $this->table set cliente= '$cliente', fecha='$fecha', empleado='$empleado',subtotal='$subtotal',iva='$iva', total='$total', tipo_pago='$tipo_pago' where $this->id= $id ";
         $result = $this->conexion->query($sql);  
          print($result);
          echo "soy un mensaje post";
