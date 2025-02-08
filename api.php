@@ -1,24 +1,24 @@
 
 <?php
-include("./contollers/controllerCliente.php");
+include("./controllers/controllerCliente.php");
 $clientes = new controllerCliente();
 include("./controllers/controllerFactura.php");
 $factura = new ControllerFactura();
-include("./contollers/controllerTipo_pago.php");
+include("./controllers/controllerTipo_pago.php");
 $tipo_pago = new controllerTipo_pago();
-include("./contollers/controllerOrden.php");
+include("./controllers/controllerOrden.php");
 $orden = new controllerOrden();
-include("./contollers/controllerCategoria.php");
+include("./controllers/controllerCategoria.php");
 $categoria = new controllerCategoria();
-include("./contollers/controllerproducto.php");
+include("./controllers/controllerproducto.php");
 $producto = new controllerproducto();
-include("./contollers/controllerFactura_producto.php");
+include("./controllers/controllerFactura_producto.php");
 $factura_producto = new controllerFactura_productos();
-include("./contollers/controllerOrden_producto.php");
+include("./controllers/controllerOrden_producto.php");
 $orden_productos = new controllerOrden_productos();
-include("./contollers/controllerProveedores.php");
+include("./controllers/controllerProveedores.php");
 $proveedores = new controllerProveedores();
-include("./contollers/controllerUsuario.php");
+include("./controllers/controllerUsuario.php");
 $usuario = new controllerUsuario();
 
 

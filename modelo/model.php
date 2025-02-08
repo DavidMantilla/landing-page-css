@@ -1,5 +1,5 @@
 <?php
-class Model {
+class model {
     public $conexion; // Asegúrate de que esta propiedad esté definida
     private $servername = "localhost";
     private $username = "root";
