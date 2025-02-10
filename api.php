@@ -38,8 +38,9 @@ $routes['POST']['/cliente/:id'] = [$cliente, 'actualizar'];
 
 //factura
 $routes['GET']['/factura'] = [$factura, 'obtener_factura'];
+$routes['GET']['/factura/mes'] = [$factura, 'factura_mes'];
+$routes['GET']['/factura/total'] = [$factura, 'factura_total'];
 $routes['GET']['/factura/:id'] = [$factura, 'buscar_factura'];
-//$routes['GET']['/factura/:id'] = [$factura, ' factura_agrupados'];
 $routes['POST']['/factura'] = [$factura, 'insertar'];
 $routes['POST']['/factura/:id'] = [$factura, 'actualizar'];
 
@@ -52,8 +53,8 @@ $routes['POST']['/tipo_pago/:id'] = [$tipo_pago, 'actualizar'];
 
 //orden
 $routes['GET']['/orden'] = [$orden, 'obtener_orden'];
+$routes['GET']['/orden/ultimo'] = [$orden, 'obtener_ultimo_producto'];
 $routes['GET']['/orden/:id'] = [$orden, 'buscar_orden'];
-//$routes['GET']['/orden/:id'] = [$orden, ' orden_agrupados'];
 $routes['POST']['/orden'] = [$orden, 'insertar'];
 $routes['POST']['/orden/:id'] = [$orden, 'actualizar'];
 
@@ -66,18 +67,19 @@ $routes['POST']['/categoria/:id'] = [$categoria, 'actualizar'];
 
 //producto
 $routes['GET']['/producto'] = [$producto, 'obtener_producto'];
+$routes['GET']['/producto/abastecer'] = [$producto, 'producto_abastecer'];
 $routes['GET']['/producto/:id'] = [$producto, 'buscar_producto'];
-//$routes['GET']['/producto/:id'] = [$producto, ' producto_agrupados'];
 $routes['POST']['/producto'] = [$producto, 'insertar'];
 $routes['POST']['/producto/:id'] = [$producto, 'actualizar'];
 
 //factura_productos
 $routes['GET']['/factura_productos'] = [$factura_productos, 'obtener_factura_productos'];
+$routes['GET']['/factura_productos/producto'] = [$factura_productos, 'producto_mas_vendido'];
 $routes['GET']['/factura_productos/:id'] = [$factura_productos, 'buscar_factura_productos'];
 //$routes['GET']['/factura_productos/:id'] = [$factura_productos , ' factura_productos_agrupados'];
 $routes['POST']['/factura_productos'] = [$factura_productos, 'insertar'];
 $routes['POST']['/factura_productos/:id'] = [$factura_productos, 'actualizar'];
-$routes['POST']['/factura_productos/:id'] = [$factura_productos, 'producto_mas_vendido'];
+
 
 //orden_productos
 $routes['GET']['/orden_productos'] = [$orden_productos, 'obtener_orden_productos'];
@@ -128,6 +130,7 @@ function dispatch($routes)
 
                 $v[0]->{$v[1]}(...$valores);
                 $error = false;
+                break;
             } else {
                 $error = true;
             }

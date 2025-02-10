@@ -47,12 +47,10 @@ class controllerProducto
         echo json_encode($producto);
     }
 
-    public function producto_agrupados()
+    public function producto_abastecer()
     {
 
-        
-
-        $sql = "SELECT * FROM $this->table";
+        $sql = "SELECT * FROM $this->table where existencia <= 0";
         $result = $this->conexion->query($sql);
         $producto = [];
         if ($result->num_rows > 0) {

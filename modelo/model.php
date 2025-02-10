@@ -1,9 +1,11 @@
 <?php
+
+
 class model {
     public $conexion; // Asegúrate de que esta propiedad esté definida
     private $servername = "localhost";
     private $username = "root";
-    private $password = ""; // Asegúrate de que la contraseña sea correcta
+    private $password = "9321"; // Asegúrate de que la contraseña sea correcta
     private $dbname = "inventariodb";
 
     public function __construct() {

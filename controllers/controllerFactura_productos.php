@@ -49,9 +49,7 @@ class controllerfactura_productos
 
 
     public function buscar_factura_productos($id)
-    {
-      
-
+    {    
         $sql = "SELECT * FROM $this->table where $this->id=".$id;
         $result = $this->conexion->query($sql);
       

@@ -46,12 +46,27 @@ class Controllerfactura {
         echo json_encode($factura);
     }
 
-    public function factura_agrupados()
+
+   public function factura_mes(){
+
+    $sql="SELECT DATE_FORMAT(fecha, '%m') as month ,sum(total) as count FROM inventariodb.factura group by DATE_FORMAT(fecha, '%m');";
+    $result = $this->conexion->query($sql);
+    $factura = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $factura[] = $row;
+        }
+    }
+    echo json_encode($factura);
+   }
+
+
+    public function factura_total()
     {
 
         
 
-        $sql = "SELECT * FROM $this->table";
+        $sql = "SELECT sum(total) as ganancia FROM $this->table";
         $result = $this->conexion->query($sql);
         $factura = [];
         if ($result->num_rows > 0) {
@@ -95,6 +110,8 @@ class Controllerfactura {
          echo "soy un mensaje post";
     }
 };
+
+
 
 
 ?>

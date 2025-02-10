@@ -32,6 +32,24 @@ class controllerorden
     }
 
 
+    public function obtener_ultimo_producto()
+    {
+
+
+        $sql = "select  fecha,producto.nombre_producto from $this->table  
+        join orden_productos on orden.id_orden= orden_productos.id_orden
+        join producto on producto.id_producto= orden_productos.id_producto
+        order by fecha desc limit 1;";
+        $result = $this->conexion->query($sql);
+        $prodfecha = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $prodfecha[] = $row;
+            }
+        }
+        echo json_encode($prodfecha);
+    }
+
     public function buscar_orden($id)
     {
 
