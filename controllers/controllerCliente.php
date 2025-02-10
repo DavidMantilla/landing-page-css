@@ -1,6 +1,5 @@
 
 <?php
-include 'modelo/model.php';
 
 class controllerCliente{
     private $model;
@@ -25,10 +24,10 @@ class controllerCliente{
         $cliente = [];
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $cliente[] = $row;
+                $cliente [] = $row;
             }
         }
-        echo json_encode($cliente);
+        echo json_encode($cliente );
     }
 
     public function cliente_agrupados()
@@ -41,7 +40,7 @@ class controllerCliente{
         $cliente = [];
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $cliente[] = $row;
+                $cliente [] = $row;
             }
         }
         echo json_encode($cliente);

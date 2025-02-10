@@ -1,5 +1,5 @@
 <?php
-include 'modelo/model.php';
+
 
 class controllerfactura_productos
 {
@@ -16,7 +16,7 @@ class controllerfactura_productos
         $this->id="id_fact_prod";
     }
 
-    public function obtener_factura_producto()
+    public function obtener_factura_productos()
     {
 
 
@@ -31,7 +31,7 @@ class controllerfactura_productos
         echo json_encode($factura_productos);
     }
 
-    public function factura_producto_agrupados()
+    public function factura_productos_agrupados()
     {
 
         
@@ -48,7 +48,7 @@ class controllerfactura_productos
     }
 
 
-    public function buscar_factura_producto($id)
+    public function buscar_factura_productos($id)
     {
       
 
@@ -89,9 +89,21 @@ class controllerfactura_productos
          print($result);
          echo "soy un mensaje post";
     }
-};
 
+//nombre del producto mas vendido y sea solamente uno 
+    public function producto_mas_vendido()
+    {
+        $sql = "SELECT p.nombre_producto FROM $this->table fp INNER JOIN producto p ON fp.id_producto=p.id_producto GROUP BY p.nombre_producto ORDER BY SUM(fp.cantidad) DESC LIMIT 1";
+        $result = $this->conexion->query($sql);
+        $factura_productos = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $factura_productos[] = $row;
+            }
+        }
+        echo json_encode($factura_productos);
+    }
+    
 
-
-
+}
 ?>

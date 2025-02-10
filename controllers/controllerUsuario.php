@@ -1,5 +1,5 @@
 <?php
-include 'modelo/model.php';
+
 
 class controllerusuario
 {

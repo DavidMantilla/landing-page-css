@@ -1,5 +1,5 @@
 <?php
-include 'modelo/model.php';
+
 
 class controllerproveedores
 {
@@ -13,7 +13,7 @@ class controllerproveedores
         $this->model = new model();
         $this->conexion = $this->model->conexion;
         $this->table="proveedores";
-        $this->id="id_proveedor";
+        $this->id="id_proveedores";
     }
 
     public function obtener_proveedores()

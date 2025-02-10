@@ -1,7 +1,10 @@
 
 <?php
+
+include 'modelo/model.php';
+
 include("./controllers/controllerCliente.php");
-$clientes = new controllerCliente();
+$cliente = new controllerCliente();
 include("./controllers/controllerFactura.php");
 $factura = new ControllerFactura();
 include("./controllers/controllerTipo_pago.php");
@@ -12,9 +15,9 @@ include("./controllers/controllerCategoria.php");
 $categoria = new controllerCategoria();
 include("./controllers/controllerproducto.php");
 $producto = new controllerproducto();
-include("./controllers/controllerFactura_producto.php");
-$factura_producto = new controllerFactura_productos();
-include("./controllers/controllerOrden_producto.php");
+include("./controllers/controllerFactura_productos.php");
+$factura_productos = new controllerFactura_productos();
+include("./controllers/controllerOrden_productos.php");
 $orden_productos = new controllerOrden_productos();
 include("./controllers/controllerProveedores.php");
 $proveedores = new controllerProveedores();
@@ -25,56 +28,75 @@ $usuario = new controllerUsuario();
 
 $routes = [];
 
-// clientes}
+// clientes
 
-$routes['GET']['/clientes'] = [$clientes, 'obtener_clientes'];
-$routes['GET']['/clientes/:id'] = [$clientes, 'buscar_cliente'];
-$routes['GET']['/clientes/:id'] = [$clientes, ' cliente_agrupados'];
-$routes['POST']['/clientes'] = [$clientes, 'insertar'];
-$routes['POST']['/clientes/:id'] = [$clientes, 'actualizar'];
+$routes['GET']['/cliente'] = [$cliente, 'obtener_clientes'];
+$routes['GET']['/cliente/:id'] = [$cliente, 'buscar_cliente'];
+//$routes['GET']['/cliente/:id'] = [$cliente, ' cliente_agrupados'];
+$routes['POST']['/cliente'] = [$cliente, 'insertar'];
+$routes['POST']['/cliente/:id'] = [$cliente, 'actualizar'];
+
+//factura
 $routes['GET']['/factura'] = [$factura, 'obtener_factura'];
 $routes['GET']['/factura/:id'] = [$factura, 'buscar_factura'];
-$routes['GET']['/factura/:id'] = [$factura, ' factura_agrupados'];
+//$routes['GET']['/factura/:id'] = [$factura, ' factura_agrupados'];
 $routes['POST']['/factura'] = [$factura, 'insertar'];
 $routes['POST']['/factura/:id'] = [$factura, 'actualizar'];
+
+//tipo_pago
 $routes['GET']['/tipo_pago'] = [$tipo_pago, 'obtener_tipo_pago'];
 $routes['GET']['/tipo_pago/:id'] = [$tipo_pago, 'buscar_tipo_pago'];
-$routes['GET']['/tipo_pago/:id'] = [$tipo_pago, ' tipo_pago_agrupados'];
+//$routes['GET']['/tipo_pago/:id'] = [$tipo_pago, ' tipo_pago_agrupados'];
 $routes['POST']['/tipo_pago'] = [$tipo_pago, 'insertar'];
 $routes['POST']['/tipo_pago/:id'] = [$tipo_pago, 'actualizar'];
+
+//orden
 $routes['GET']['/orden'] = [$orden, 'obtener_orden'];
 $routes['GET']['/orden/:id'] = [$orden, 'buscar_orden'];
-$routes['GET']['/orden/:id'] = [$orden, ' orden_agrupados'];
+//$routes['GET']['/orden/:id'] = [$orden, ' orden_agrupados'];
 $routes['POST']['/orden'] = [$orden, 'insertar'];
 $routes['POST']['/orden/:id'] = [$orden, 'actualizar'];
+
+//categoria
 $routes['GET']['/categoria'] = [$categoria, 'obtener_categoria'];
 $routes['GET']['/categoria/:id'] = [$categoria, 'buscar_categoria'];
-$routes['GET']['/categoria/:id'] = [$categoria, ' categoria_agrupados'];
+//$routes['GET']['/categoria/:id'] = [$categoria, ' categoria_agrupados'];
 $routes['POST']['/categoria'] = [$categoria, 'insertar'];
 $routes['POST']['/categoria/:id'] = [$categoria, 'actualizar'];
+
+//producto
 $routes['GET']['/producto'] = [$producto, 'obtener_producto'];
 $routes['GET']['/producto/:id'] = [$producto, 'buscar_producto'];
-$routes['GET']['/producto/:id'] = [$producto, ' producto_agrupados'];
+//$routes['GET']['/producto/:id'] = [$producto, ' producto_agrupados'];
 $routes['POST']['/producto'] = [$producto, 'insertar'];
 $routes['POST']['/producto/:id'] = [$producto, 'actualizar'];
-$routes['GET']['/factura_producto'] = [$factura_producto, 'obtener_factura_producto'];
-$routes['GET']['/factura_producto/:id'] = [$factura_producto, 'buscar_factura_producto'];
-$routes['GET']['/factura_producto/:id'] = [$factura_producto , ' factura_producto_agrupados'];
-$routes['POST']['/factura_producto'] = [$factura_producto, 'insertar'];
-$routes['POST']['/factura_producto/:id'] = [$factura_producto, 'actualizar'];
+
+//factura_productos
+$routes['GET']['/factura_productos'] = [$factura_productos, 'obtener_factura_productos'];
+$routes['GET']['/factura_productos/:id'] = [$factura_productos, 'buscar_factura_productos'];
+//$routes['GET']['/factura_productos/:id'] = [$factura_productos , ' factura_productos_agrupados'];
+$routes['POST']['/factura_productos'] = [$factura_productos, 'insertar'];
+$routes['POST']['/factura_productos/:id'] = [$factura_productos, 'actualizar'];
+$routes['POST']['/factura_productos/:id'] = [$factura_productos, 'producto_mas_vendido'];
+
+//orden_productos
 $routes['GET']['/orden_productos'] = [$orden_productos, 'obtener_orden_productos'];
 $routes['GET']['/orden_productos/:id'] = [$orden_productos, 'buscar_orden_productos'];
-$routes['GET']['/orden_productos/:id'] = [$orden_productos, ' orden_productos_agrupados'];
+//$routes['GET']['/orden_productos/:id'] = [$orden_productos, ' orden_productos_agrupados'];
 $routes['POST']['/orden_productos'] = [$orden_productos, 'insertar'];
 $routes['POST']['/orden_productos/:id'] = [$orden_productos, 'actualizar'];
-$routes['GET']['/proveedores'] = [$proveedores, 'obtener_orden_productos'];
-$routes['GET']['/proveedores/:id'] = [$proveedores, 'buscar_orden_productos'];
-$routes['GET']['/proveedores/:id'] = [$proveedores, ' orden_productos_agrupados'];
+
+//proveedores
+$routes['GET']['/proveedores'] = [$proveedores, 'obtener_proveedores'];
+$routes['GET']['/proveedores/:id'] = [$proveedores, 'buscar_proveedores'];
+//$routes['GET']['/proveedores/:id'] = [$proveedores, ' proveedores_agrupados'];
 $routes['POST']['/proveedores'] = [$proveedores, 'insertar'];
 $routes['POST']['/proveedores/:id'] = [$proveedores, 'actualizar'];
+
+//usuario
 $routes['GET']['/usuario'] = [$usuario, 'obtener_usuario'];
 $routes['GET']['/usuario/:id'] = [$usuario, 'buscar_usuario'];
-$routes['GET']['/usuario/:id'] = [$usuario, ' usuario_agrupados'];
+//$routes['GET']['/usuario/:id'] = [$usuario, ' usuario_agrupados'];
 $routes['POST']['/usuario'] = [$usuario, 'insertar'];
 $routes['POST']['/usuario/:id'] = [$usuario, 'actualizar'];
 

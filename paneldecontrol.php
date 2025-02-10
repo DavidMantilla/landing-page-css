@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <p><strong>producto más vendido</strong></p>
                         <div style="display: flex; justify-content:flex-start; align-items: center;"> <img src="imagenes/productomasvendido.svg" alt="" srcset="" width="30px" class="icon-card">
-                            <span style="color:#16AF89"><?php echo ('nombredelproducto') ?></span>
+                            <span style="color:#16AF89"> <?php echo ('nombredelproducto') ?></span>
                         </div>
                     </div>
                 </div>

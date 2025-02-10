@@ -1,5 +1,4 @@
 <?php
-include 'modelo/model.php';
 
 class controllerCategoria
 {
