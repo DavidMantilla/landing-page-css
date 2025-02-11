@@ -13,9 +13,7 @@ class controllerCliente{
         $this->conexion = $this->model->conexion;
         $this->table="clientes";
         $this->id="id_cliente";
-        // $auth = new authController();
-        // $auth->session_validate_api();
-    }
+           }
 
     public function obtener_clientes()
     {

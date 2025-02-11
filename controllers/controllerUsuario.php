@@ -58,6 +58,7 @@ class controllerusuario
 
         $sql = "SELECT * FROM $this->table where correo= '$nombre'";
 
+    
         $stmt = $this->conexion->prepare("SELECT * FROM $this->table WHERE correo = ?");
         $stmt->bind_param("s", $nombre);
         $stmt->execute();

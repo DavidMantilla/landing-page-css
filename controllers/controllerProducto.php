@@ -14,8 +14,7 @@ class controllerProducto
         $this->conexion = $this->model->conexion;
         $this->table="producto";
         $this->id="id_producto";
-        // $auth = new authController();
-        // $auth->session_validate_api();
+        
     }
 
     public function obtener_producto()

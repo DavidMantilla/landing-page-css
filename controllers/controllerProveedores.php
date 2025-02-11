@@ -14,8 +14,7 @@ class controllerproveedores
         $this->conexion = $this->model->conexion;
         $this->table="proveedores";
         $this->id="id_proveedores";
-        // $auth = new authController();
-        // $auth->session_validate_api();
+        
     }
 
     public function obtener_proveedores()
