@@ -146,7 +146,7 @@ function dispatch($routes, $auth)
         }
     }else{
         header('HTTP/1.1 404 Not Found');
-        echo (json_encode(["error"=>"404 Not Found"]));
+        print_r (json_encode(["error"=>"404 Not Found"]));
     }
 }
 

@@ -1,7 +1,45 @@
+<style>
+    .menu {
+    list-style-type: none;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: -100px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li:hover .submenu,.menu > li:active .submenu {
+    display: block;
+}
+
+.submenu li {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 200px;
+}
+</style>
+
 <header class="header">
     <div class="welcome-text">Bienvenidos</div>
     <div class="cuenta">
-        <img class="account" src="./imagenes/perfil.png">
+    <ul class="menu">
+      <li >    <img class="account" src="./imagenes/perfil.png">
+      <ul class="submenu">
+                <li><form action="./api.php/logout" method="post"> <button style="background: none; border: none;">Logout</button></form></li>
+                
+            </ul>
+        </li>
+    </ul>
     </div>
 </header>
 <script>
