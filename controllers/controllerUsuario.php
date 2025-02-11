@@ -55,30 +55,28 @@ class controllerusuario
         $nombre = $_REQUEST["email"];
         $pass = $_REQUEST["password"];
 
-        // Uso de consultas preparadas para evitar inyecciones SQL
+
+        $sql = "SELECT * FROM $this->table where correo= '$nombre'";
+
         $stmt = $this->conexion->prepare("SELECT * FROM $this->table WHERE correo = ?");
         $stmt->bind_param("s", $nombre);
         $stmt->execute();
         $result = $stmt->get_result();
-
         $usuario = [];
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc(); // Usar fetch_assoc para obtener un array asociativo
+            $row = $result->fetch_assoc();
             $usuario = $row;
 
-            if (password_verify($pass, $row['password'])) { // Verificar la contraseña con el hash almacenado
+            if (password_verify($pass, $usuario['contrasena'])) {
 
                 $auth = new authController();
                 $auth->sesion_create($usuario);
                 echo json_encode($usuario);
             } else {
-                echo json_encode(["error" => "Contraseña incorrecta"]);
+                echo json_encode(["error" => "pasword"]);
             }
-        } else {
-            echo json_encode(["error" => "Usuario no encontrado"]);
         }
     }
-
 
 
     public function insertar()
