@@ -73,9 +73,12 @@ class controllerusuario
                 $auth = new authController();
                 $auth->sesion_create($usuario);
                 echo json_encode($usuario);
+                header('location: /landing%20page%20css/paneldecontrol.php');
             } else {
-                echo json_encode(["error" => "pasword"]);
+                header('location: /landing%20page%20css?error=clave');
             }
+        }else{
+            header('location: /landing%20page%20css?error=usuario');
         }
     }
 

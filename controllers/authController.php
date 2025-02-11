@@ -8,7 +8,7 @@ class authController{
    function sesion_create($usuario){
   
      $_SESSION['user']=$usuario;
-
+ 
 
    }
 
@@ -26,7 +26,8 @@ class authController{
     function session_validate_api(){
       
         if(!isset($_SESSION['user'])){
-            echo ("401 Unauthorized");
+            echo (json_encode(["error"=>"401 Unauthorized"]));
+            header('HTTP/1.1 401 Unauthorized');
             exit();
         }
     }

@@ -137,7 +137,9 @@
     fetch('api.php/producto')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
             }
             return response.json();
         })

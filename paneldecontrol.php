@@ -74,8 +74,15 @@
         // 
         fetch('api.php/factura_productos/producto')
             .then(response => {
+                
+                
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    
+                    console.log(response.status);
+                    
+                    if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
                 }
                 return response.json();
             })
@@ -99,7 +106,9 @@
         fetch('api.php/factura/total')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
                 }
                 return response.json();
             })
@@ -123,7 +132,9 @@
         fetch('api.php/orden/ultimo')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
                 }
                 return response.json();
             })
@@ -148,7 +159,9 @@
         fetch('api.php/producto/abastecer')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
                 }
                 return response.json();
             })
@@ -186,7 +199,9 @@
         fetch('api.php/factura/mes')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    if(response.status=='401'){
+                        window.location.href = 'index.html';
+                    }
                 }
                 return response.json();
             })
