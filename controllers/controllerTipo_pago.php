@@ -14,6 +14,8 @@ class controllertipo_pago
         $this->conexion = $this->model->conexion;
         $this->table="tipo_pago";
         $this->id="id";
+        // $auth = new authController();
+        // $auth->session_validate_api();
     }
 
     public function obtener_tipo_pago()

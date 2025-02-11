@@ -14,6 +14,8 @@ class controllerorden
         $this->conexion = $this->model->conexion;
         $this->table="orden";
         $this->id="id_orden";
+        // $auth = new authController();
+        // $auth->session_validate_api();
     }
 
     public function obtener_orden()

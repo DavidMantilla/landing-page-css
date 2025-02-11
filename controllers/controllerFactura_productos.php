@@ -14,7 +14,9 @@ class controllerfactura_productos
         $this->conexion = $this->model->conexion;
         $this->table="factura_productos";
         $this->id="id_fact_prod";
-    }
+    //     $auth = new authController();
+    //     $auth->session_validate_api();
+     }
 
     public function obtener_factura_productos()
     {

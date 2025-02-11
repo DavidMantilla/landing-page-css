@@ -14,6 +14,8 @@ class controllerorden_productos
         $this->conexion = $this->model->conexion;
         $this->table="orden_productos";
         $this->id="id_orden_prod";
+        // $auth = new authController();
+        // $auth->session_validate_api();
     }
 
     public function obtener_orden_productos()

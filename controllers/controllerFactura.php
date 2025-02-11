@@ -13,6 +13,8 @@ class Controllerfactura {
         $this->conexion = $this->model->conexion;
         $this->table="factura";
         $this->id="id_factura";
+        // $auth = new authController();
+        // $auth->session_validate_api();
     }
 
     public function obtener_factura()

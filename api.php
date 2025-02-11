@@ -1,8 +1,11 @@
 
 <?php
 
-include 'modelo/model.php';
 
+ 
+include 'modelo/model.php';
+include("./controllers/authController.php");
+$auth = new authController();
 include("./controllers/controllerCliente.php");
 $cliente = new controllerCliente();
 include("./controllers/controllerFactura.php");
@@ -96,15 +99,15 @@ $routes['POST']['/proveedores'] = [$proveedores, 'insertar'];
 $routes['POST']['/proveedores/:id'] = [$proveedores, 'actualizar'];
 
 //usuario
-$routes['GET']['/usuario'] = [$usuario, 'obtener_usuario'];
-$routes['GET']['/usuario/:id'] = [$usuario, 'buscar_usuario'];
+
+$routes['POST']['/usuario/login'] = [$usuario, 'login'];
 //$routes['GET']['/usuario/:id'] = [$usuario, ' usuario_agrupados'];
 $routes['POST']['/usuario'] = [$usuario, 'insertar'];
 $routes['POST']['/usuario/:id'] = [$usuario, 'actualizar'];
 
 
 
-
+//$routes['POST']['/logout'] = [$auth, 'logout'];
 //$result = $routes['GET']['/clientes'][0]->obtener_clientes();
 
 function dispatch($routes)

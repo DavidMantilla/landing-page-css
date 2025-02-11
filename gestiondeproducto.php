@@ -22,7 +22,7 @@
         <div class="main-content " style="z-index: auto;">
             <div class="busqueda">
                 <input type="text" name="buscador" id="buscador" placeholder="buscar articulos...">
-                  &nbsp;  &nbsp;  &nbsp;
+                &nbsp; &nbsp; &nbsp;
                 <select class="categoria-btn" id="categoria-btn">
                     Categoria
                     <option selected value="">Categorias</option>
@@ -89,13 +89,13 @@
                             <h2>nueva Categoria </h2> <button class="close" onclick="cerrar('addCategoria')">X</button>
                         </div>
                         <div class="card-body" style="padding: 20px;">
-                           
+
 
                             <div class="ctn-form">
                                 <form action="">
-                                <p><strong><label for="">Nombre</label></strong></p>
-                                <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
-                                <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
+                                    <p><strong><label for="">Nombre</label></strong></p>
+                                    <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
+                                    <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                                 </form>
                             </div>
                         </div>
@@ -128,46 +128,70 @@
         add.style.display = 'block';
 
     });
-    let colores = ['#16AF89', '#B68117', '#EC6273'];
-    let colorA = 0;
 
-    let productoLista = document.getElementById('producto-list');
 
-    for (let i = 0; i < 10; i++) {
 
-        let div = document.createElement('div');
-        div.classList.add('card');
-        div.classList.add('col-30');
-        div.style.borderTop = '5px solid ' + colores[colorA];
-        div.style.borderBottom = '5px solid ' + colores[colorA];
-        div.innerHTML = ` <div class="card-body">
-                            <div class="card-imagen"><img src="" alt="" width="100%" src=""></div>
 
-                            <div style="display:flex; justify-content:space-between"> <h2><strong>Nombre</strong></h2>
-                            <a href=""> <img src=${"imagenes/editar.svg"} alt="" srcset="" width="30px" class="icon-card"></a>
+    window.producto = () => {
+
+    fetch('api.php/producto')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+
+            if (data.length >= 0) {
+                let productoLista = document.getElementById('producto-list');
+                let colores = ['#16AF89', '#B68117', '#EC6273'];
+                let colorA = 0;
+                data.forEach(Element => {
+
+                    let div = document.createElement('div');
+                    div.classList.add('card');
+                    div.classList.add('col-30');
+                    div.style.borderTop = '5px solid ' + colores[colorA];
+                    div.style.borderBottom = '5px solid ' + colores[colorA];
+                    div.innerHTML = ` <div class="card-body">
+                            <div class="card-imagen"><img src="${Element.imagen_producto}" alt="" width="100%" src=""></div>
+
+                            <div style="display:flex; justify-content:space-between"> <h2><strong>${Element.nombre_producto}</strong></h2>
+                            <a href=""> <img src='imagenes/editar.svg' alt="" srcset="" width="30px" class="icon-card"></a>
                             </div>
                             <div>
-                                <p><strong>Categoria</strong> ${'categoria'}</p> 
-                                <p><strong>Cantidad</strong> ${'cantidad'}</p>
+                                <p><strong>Categoria</strong> ${Element.categoria}</p> 
+                                <p><strong>Cantidad</strong> ${Element.existencia}</p>
                             </div>
                             <h2><strong>Descripcion</strong></h2>
-                            <div class="card-descripcion"> ${'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi maxime perferendis iusto voluptate corrupti eveniet dignissimos tempora, laboriosam eius ex sapiente odit natus enim repellat quaerat, alias in assumenda?'}</div>
-                            <div style="width: 60%;margin-left: auto;">
+                            <div class="card-descripcion"> ${Element.descripcion}</div>
+                            <div style="width: 40%;margin-left: auto; display: flex;">
 
                                 <img src="imagenes/ganancias.svg" alt="" srcset="" width="30px" class="icon-card-2">
-                                <h2><strong> ${'10000'}</strong></h2>
+                                <h2><strong> ${Element.precio}</strong></h2>
                             </div>
                   
                         </div>`;
 
-        productoLista.appendChild(div);
+                    productoLista.appendChild(div);
 
-        if (colorA >= 2) {
-            colorA = 0;
-        } else {
-            colorA++;
-        }
+                    if (colorA >= 2) {
+                        colorA = 0;
+                    } else {
+                        colorA++;
+                    }
+                });
+            }
+        });
+
+
+    
+
+
     }
+    producto();
 </script>
 </body>
 
