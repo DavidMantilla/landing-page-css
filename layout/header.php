@@ -28,12 +28,12 @@
     width: 200px;
 }
 </style>
-
+<?php session_start();?>
 <header class="header">
     <div class="welcome-text">Bienvenidos</div>
     <div class="cuenta">
-    <ul class="menu">
-      <li >    <img class="account" src="./imagenes/perfil.png">
+    <ul class="menu" style="margin-right: 20px;">
+      <li >  <div style="display: flex;gap:5px;justify-content: center;align-items: center;padding: 10px;"><?php echo $_SESSION['user']['nombre'];?>  <img class="account" src="./imagenes/perfil.png"> </div>
       <ul class="submenu">
                 <li><form action="./api.php/logout" method="post"> <button style="background: none; border: none;">Logout</button></form></li>
                 
