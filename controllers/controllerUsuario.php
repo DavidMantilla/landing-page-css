@@ -85,17 +85,34 @@ class controllerusuario
 
     public function insertar()
     {
+
         $nombre = $_REQUEST["nombre"];
         $correo = $_REQUEST["correo"];
-        $fecha_nacimiento = $_REQUEST["fecha_nacimiento"];
-        $contraseña = $_REQUEST["contraseña"];
-        $acepta = $_REQUEST["acepta"];
+        $fecha_nacimiento = $_REQUEST["date"];
+        $contrasena = $_REQUEST["contrasena"];
+        $contrasena2 = $_REQUEST["contrasena2"];
+        
+        $acepta = isset($_REQUEST["conditions"])?1:0;
+        if( strcmp($contrasena,$contrasena2)!=0){
+            header('location: /landing%20page%20css/registro.html?clave=distintas');
+            exit();
+        }
 
-        $sql = "INSERT INTO $this->table (nombre,correo,fecha_nacimiento,contraseña,acepta) values( '$nombre','$correo','$fecha_nacimiento','$contraseña','$acepta')";
-        print_r($sql);
+        $opciones = [
+            'cost' => 12,
+        ];
+        
+        $contrasena=password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
+        $sql = "INSERT INTO $this->table (nombre,correo,fecha_nacimiento,contrasena,acepta) values( '$nombre','$correo','$fecha_nacimiento','$contrasena','$acepta')";
+
         $result = $this->conexion->query($sql);
-        print($result);
-        echo "soy un menhsaje post";
+       
+        $usuario=  $this->conexion->query("select * from {$this->table} where id_usuario= {$this->conexion->insert_id}")->fetch_assoc();
+        $auth = new authController();
+        $auth->sesion_create($usuario);
+        echo json_encode($usuario);
+        header('location: /landing%20page%20css/paneldecontrol.php');
+
     }
 
     public function actualizar($id)
