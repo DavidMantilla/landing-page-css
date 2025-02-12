@@ -221,22 +221,23 @@ join producto on producto.id_producto= factura_productos.id_producto
         $total = $_REQUEST["total"];
         $tipo_pago = $_REQUEST["tipo_pago"];
         $productos = $_REQUEST["productos"];
-
+       
         $sql = "INSERT INTO $this->table (cliente,fecha,empleado,subtotal,iva,total, tipo_pago) values( '$cliente','$fecha','$empleado','$subtotal','$iva','$total', '$tipo_pago')";
 
         $result = $this->conexion->query($sql);
 
         $productos = json_decode($productos);
         $id_factura = $this->conexion->insert_id;
-
+     
 
         foreach ($productos as $prod) {
-
+            
 
             if ($this->restarproducto($prod->id_producto, $prod->cantidad)) {
-
+               
                 $sql = "INSERT INTO factura_productos (id_factura,id_producto,cantidad,precio) values( '$id_factura',$prod->id_producto,'$prod->cantidad','$prod->precio')";
                 $result = $this->conexion->query($sql);
+                
             }
         }
 
