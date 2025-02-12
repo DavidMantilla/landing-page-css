@@ -97,7 +97,7 @@ CREATE TABLE `factura_productos` (
   `id_fact_prod` int(11) NOT NULL,
   `id_factura` int(11) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL
+  `cantidad` int(11) DEFAULT NULL,
   `precio`   float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -215,7 +215,7 @@ CREATE TABLE `tipo_pago` (
 --
 
 INSERT INTO `tipo_pago` (`id`, `tipo_pago`) VALUES
-(1, 'efectivo')(2, 'tarjeta');
+(1, 'efectivo'),(2, 'tarjeta');
 
 -- --------------------------------------------------------
 
