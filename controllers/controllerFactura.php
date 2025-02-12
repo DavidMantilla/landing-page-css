@@ -196,7 +196,7 @@ join producto on producto.id_producto= factura_productos.id_producto
     public function restarproducto($id_producto, $cantidad)
     {
         $resultexitencia = $this->conexion->query('SELECT existencia FROM producto where id_producto=' . $id_producto);
-        print_r($resultexitencia);
+     
         $existencia = $resultexitencia->fetch_assoc()['existencia'];
 
         if ($existencia > $cantidad) {
@@ -204,7 +204,7 @@ join producto on producto.id_producto= factura_productos.id_producto
             $existencia -= $cantidad;
 
             $sql = "UPDATE producto set  existencia='$existencia' where id_producto= $id_producto ";
-            print_r($sql);
+            
             $result = $this->conexion->query($sql);
             return true;
         } else {
