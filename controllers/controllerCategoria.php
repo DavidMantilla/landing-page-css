@@ -70,11 +70,12 @@ class controllerCategoria
         $categoria_nombre=$_REQUEST["categoria_nombre"];
 
 
-        $sql = "INSERT INTO $this->table (categoria_nombre) values( '$categoria_nombre')";
+        $sql = "INSERT INTO $this->table (nombre_categoria) values ( '$categoria_nombre')";
         print_r($sql);
         $result = $this->conexion->query($sql);  
-         print($result);
-         echo "soy un menhsaje post";
+        header('location: /landing%20page%20css/gestiondeproducto.php');
+
+        
     }
 
     public function actualizar($id)

@@ -98,6 +98,7 @@ CREATE TABLE `factura_productos` (
   `id_factura` int(11) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL
+  `precio`   float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -106,23 +107,6 @@ CREATE TABLE `factura_productos` (
 
 INSERT INTO `factura_productos` (`id_fact_prod`, `id_factura`, `id_producto`, `cantidad`) VALUES
 (1, 1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `normatividad`
---
-
-CREATE TABLE `normatividad` (
-  `id_normatividad` int(11) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `url` varchar(200) DEFAULT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `documento` int(11) DEFAULT NULL,
-  `grupo` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -231,7 +215,7 @@ CREATE TABLE `tipo_pago` (
 --
 
 INSERT INTO `tipo_pago` (`id`, `tipo_pago`) VALUES
-(1, 'efectivo');
+(1, 'efectivo')(2, 'tarjeta');
 
 -- --------------------------------------------------------
 
@@ -364,11 +348,7 @@ ALTER TABLE `factura`
 ALTER TABLE `factura_productos`
   MODIFY `id_fact_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
---
--- AUTO_INCREMENT de la tabla `normatividad`
---
-ALTER TABLE `normatividad`
-  MODIFY `id_normatividad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 
 --
 -- AUTO_INCREMENT de la tabla `orden`

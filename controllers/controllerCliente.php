@@ -73,10 +73,9 @@ class controllerCliente{
         $correo=$_REQUEST["correo"];
 
         $sql = "INSERT INTO $this->table (nombre_completo,telefono,direccion,ciudad,correo) values( '$nombre_completo','$telefono','$direccion','$ciudad','$correo')";
-        print_r($sql);
+      
         $result = $this->conexion->query($sql);  
-         print($result);
-         echo "soy un menhsaje post";
+        header('location: /landing%20page%20css/pedidos.php');
     }
 
     public function actualizar($id)

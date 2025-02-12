@@ -26,9 +26,7 @@
                 <select class="categoria-btn" id="categoria-btn">
                     Categoria
                     <option selected value="">Categorias</option>
-                    <option value="">cate1</option>
-                    <option value="">cate2</option>
-                    <option value="">cate3</option>
+
                 </select>
 
                 <button class="categoria-btn" id="crearcategoria">
@@ -55,24 +53,26 @@
                             <h2 class="title-2" style="border-color: #16AF89; text-align: center;">Producto</h2> </a>
 
                             <div class="ctn-form">
-                                <form action="">
+                                <form action="api.php/producto" method="post" enctype="multipart/form-data">
 
 
                                     <p><strong><label for="">imagen de producto</label></strong></p>
-                                    <input type="file" class="input" />
+                                    <input type="file" class="input" name="imagen_producto" />
 
                                     <p><strong><label for="">Nombre</label></strong></p>
-                                    <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
+                                    <input type="text" style="border-color:#B68117;" name="nombre_producto" class="input"></input>
                                     <p><strong><label for="">Categoria</label></strong></p>
-                                    <input type="text" style="border-color: #EC6273;" name="text" class="input"></input>
+                                    <select class="input" id="categoria" name="categoria">
+
+                                        <option selected value="">Categorias</option>
+
+                                    </select>
                                     <p><strong><label for="">Cantidad</label></strong></p>
-                                    <input type="number" style="border-color:#A955CF;" name="number" class="input"></input>
-                                    <p><strong><label for="">Estado</label></strong></p>
-                                    <input type="text" style="border-color: #4A93E9;" name="text" class="input"></input>
+                                    <input type="number" style="border-color:#A955CF;" name="existencia" class="input"></input>
                                     <p><strong><label for="">Descripcion</label></strong></p>
-                                    <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
+                                    <input type="text" style="border-color:#B68117;" name="descripcion" class="input"></input>
                                     <p><strong><label for="">Precio</label></strong></p>
-                                    <input type="number" style="border-color: #EC6273;" name="number" class="input"></input>
+                                    <input type="number" style="border-color: #EC6273;" name="precio" class="input"></input>
 
                                     <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                                 </form>
@@ -92,9 +92,9 @@
 
 
                             <div class="ctn-form">
-                                <form action="">
+                                <form action="api.php/categoria" method="post">
                                     <p><strong><label for="">Nombre</label></strong></p>
-                                    <input type="text" style="border-color:#B68117;" name="text" class="input"></input>
+                                    <input type="text" style="border-color:#B68117;" name="categoria_nombre" class="input"></input>
                                     <button class="input" style="border: none; background-color: #EC6273">Guardar</button>
                                 </form>
                             </div>
@@ -131,34 +131,90 @@
 
 
 
+    let productos = [];
 
-    window.producto = () => {
+    document.getElementById('buscador').addEventListener('keyup', (event) => {
+        if (event.target.value != "") {
 
-    fetch('api.php/producto')
-        .then(response => {
-            if (!response.ok) {
-                if(response.status=='401'){
+            let productosfil = productos.filter(prod => prod.nombre_producto == event.target.value);
+
+            mostrarproducto(productosfil);
+        } else {
+            mostrarproducto(productos);
+        }
+
+    });
+
+    document.getElementById('categoria-btn').addEventListener('change', (event) => {
+        let productosfil = productos.filter(prod => prod.id_categoria == event.target.value);
+
+        mostrarproducto(productosfil);
+
+    })
+
+    window.cargarcategoria = () => {
+
+        fetch('api.php/categoria')
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status == '401') {
                         window.location.href = 'index.html';
                     }
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
+                }
+                return response.json();
+            })
+            .then(data => {
 
-            if (data.length >= 0) {
-                let productoLista = document.getElementById('producto-list');
-                let colores = ['#16AF89', '#B68117', '#EC6273'];
-                let colorA = 0;
-                data.forEach(Element => {
+                let select = document.getElementById('categoria-btn');
+                let selectform = document.getElementById('categoria');
+                select.innerHTML = "<option>Categoria </option>";
+                selectform.innerHTML = "<option>Seleccione categoria </option>";
+                if (data.length >= 0) {
+                    let categoria = data;
+                    categoria.forEach(Element => {
 
-                    let div = document.createElement('div');
-                    div.classList.add('card');
-                    div.classList.add('col-30');
-                    div.style.borderTop = '5px solid ' + colores[colorA];
-                    div.style.borderBottom = '5px solid ' + colores[colorA];
-                    div.innerHTML = ` <div class="card-body">
-                            <div class="card-imagen"><img src="${Element.imagen_producto}" alt="" width="100%" src=""></div>
+
+                        let option = document.createElement('option');
+                        option.value = Element.id_categoria;
+                        option.innerText = Element.nombre_categoria;
+                        select.append(option);
+
+                    })
+
+
+                    categoria.forEach(Element => {
+
+
+                        let option = document.createElement('option');
+                        option.value = Element.id_categoria;
+                        option.innerText = Element.nombre_categoria;
+                        selectform.append(option);
+
+                    })
+
+                }
+            });
+
+
+
+    }
+
+    window.mostrarproducto = (productos) => {
+
+        let productoLista = document.getElementById('producto-list');
+        productoLista.innerHTML = "";
+        let colores = ['#16AF89', '#B68117', '#EC6273'];
+        let colorA = 0;
+        productos.forEach(Element => {
+            console.log(Element);
+
+            let div = document.createElement('div');
+            div.classList.add('card');
+            div.classList.add('col-30');
+            div.style.borderTop = '5px solid ' + colores[colorA];
+            div.style.borderBottom = '5px solid ' + colores[colorA];
+            div.innerHTML = ` <div class="card-body">
+                            <div class="card-imagen"><img src="${Element.imagen_producto!=null?Element.imagen_producto:""}" alt="" width="100%" src=""></div>
 
                             <div style="display:flex; justify-content:space-between"> <h2><strong>${Element.nombre_producto}</strong></h2>
                             <a href=""> <img src='imagenes/editar.svg' alt="" srcset="" width="30px" class="icon-card"></a>
@@ -177,22 +233,45 @@
                   
                         </div>`;
 
-                    productoLista.appendChild(div);
+            productoLista.appendChild(div);
 
-                    if (colorA >= 2) {
-                        colorA = 0;
-                    } else {
-                        colorA++;
-                    }
-                });
+            if (colorA >= 2) {
+                colorA = 0;
+            } else {
+                colorA++;
             }
         });
+    }
 
 
-    
+
+    window.producto = () => {
+
+        fetch('api.php/producto')
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status == '401') {
+                        window.location.href = 'index.html';
+                    }
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+
+                if (data.length >= 0) {
+                    productos = data;
+                    window.mostrarproducto(data);
+                }
+            });
+
+
+
 
 
     }
+
+    cargarcategoria();
     producto();
 </script>
 </body>

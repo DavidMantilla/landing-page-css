@@ -139,8 +139,7 @@
                 return response.json();
             })
             .then(data => {
-                console.log(data);
-
+                
                 if (data.length >= 0) {
 
                     document.getElementById('ultimoprod').innerText = data[0].nombre_producto;
