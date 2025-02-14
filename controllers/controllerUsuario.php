@@ -58,9 +58,11 @@ class controllerusuario
 
         $sql = "SELECT * FROM $this->table where correo= '$nombre'";
 
-    
+        
         $stmt = $this->conexion->prepare("SELECT * FROM $this->table WHERE correo = ?");
+        
         $stmt->bind_param("s", $nombre);
+       
         $stmt->execute();
         $result = $stmt->get_result();
         $usuario = [];
@@ -104,7 +106,7 @@ class controllerusuario
         
         $contrasena=password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
         $sql = "INSERT INTO $this->table (nombre,correo,fecha_nacimiento,contrasena,acepta) values( '$nombre','$correo','$fecha_nacimiento','$contrasena','$acepta')";
-
+      
         $result = $this->conexion->query($sql);
        
         $usuario=  $this->conexion->query("select * from {$this->table} where id_usuario= {$this->conexion->insert_id}")->fetch_assoc();

@@ -53,7 +53,8 @@ class controllerproveedores
     {
       
 
-        $sql = "SELECT * FROM $this->table where $this->id=".$id;
+        $sql = "SELECT * FROM $this->table  where $this->id=".$id;
+    
         $result = $this->conexion->query($sql);
       
         $proveedores = [];
@@ -78,7 +79,7 @@ class controllerproveedores
         print_r($sql);
         $result = $this->conexion->query($sql);  
          print($result);
-         echo "soy un menhsaje post";
+         header('location: /landing%20page%20css/suministros.php');
     }
 
     public function actualizar($id)

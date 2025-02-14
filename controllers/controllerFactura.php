@@ -51,7 +51,8 @@ join producto on producto.id_producto= factura_productos.id_producto
             while ($row = $result->fetch_assoc()) {
                 $factura[] = $row;
             }
-
+           
+          
            
         }
         
@@ -108,10 +109,10 @@ join producto on producto.id_producto= factura_productos.id_producto
                 ?>
                     <tr>
 
-                        <td style="text-align: center;"><b></b> <?php echo $factura[0]['nombre_producto']; ?></td>
-                        <td style="text-align: center;"><b></b> <?php echo $factura[0]['cantidad']; ?></td>
-                        <td style="text-align: center;"><b></b> <?php echo $factura[0]['precioUnitario']; ?></td>
-                        <td style="text-align: center;"><b></b> <?php echo $factura[0]['preciototal']; ?></td>
+                        <td style="text-align: center;"><b></b> <?php echo $fact['nombre_producto']; ?></td>
+                        <td style="text-align: center;"><b></b> <?php echo $fact['cantidad']; ?></td>
+                        <td style="text-align: center;"><b></b> <?php echo $fact['precioUnitario']; ?></td>
+                        <td style="text-align: center;"><b></b> <?php echo $fact['preciototal']; ?></td>
 
                     </tr>
 
@@ -223,8 +224,8 @@ join producto on producto.id_producto= factura_productos.id_producto
         $productos = $_REQUEST["productos"];
        
         $sql = "INSERT INTO $this->table (cliente,fecha,empleado,subtotal,iva,total, tipo_pago) values( '$cliente','$fecha','$empleado','$subtotal','$iva','$total', '$tipo_pago')";
-
         $result = $this->conexion->query($sql);
+        
 
         $productos = json_decode($productos);
         $id_factura = $this->conexion->insert_id;
