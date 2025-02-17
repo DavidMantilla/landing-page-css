@@ -68,7 +68,8 @@ class controllerProducto
         $uploadFileDir = './archivos/';
         $dest_path = $uploadFileDir .date('YmdHis').$imagen_producto['name'];
         if( isset($imagen_producto)){
-             $tipos=["image/png","image/jpg","image/svg","image/tiff","image/webp"];
+            print_r($imagen_producto['type']);
+             $tipos=["image/png","image/jpeg","image/svg+xml","image/tiff","image/webp"];
             if(in_array($imagen_producto['type'],$tipos)){
                 if(!move_uploaded_file($imagen_producto['tmp_name'], $dest_path))
                 {
@@ -76,6 +77,8 @@ class controllerProducto
                     header('location: /landing%20page%20css/gestiondeproducto.php?error='.$message);
                     exit();
                 }
+                header('location: /landing%20page%20css/gestiondeproducto.php?error='.$message);
+                exit();
             }
         }
         $existencia=$_REQUEST["existencia"];
@@ -85,7 +88,7 @@ class controllerProducto
         $categoria=$_REQUEST["categoria"];
 
         $sql = "INSERT INTO $this->table (imagen_producto,existencia,descripcion,nombre_producto,precio,categoria) values( '$dest_path','$existencia','$descripcion','$nombre_producto','$precio','$categoria')";
-        print_r($sql);
+ 
         $result = $this->conexion->query($sql);  
         header('location: /landing%20page%20css/gestiondeproducto.php');
         
