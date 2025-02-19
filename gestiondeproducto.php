@@ -214,7 +214,7 @@
             div.style.borderTop = '5px solid ' + colores[colorA];
             div.style.borderBottom = '5px solid ' + colores[colorA];
             div.innerHTML = ` <div class="card-body">
-                            <div class="card-imagen"><img src="${Element.imagen_producto!=null?Element.imagen_producto:""}" alt="" width="100%" src=""></div>
+                            <div class="card-imagen"><img src="${Element.imagen_producto!=null?Element.imagen_producto:""}" alt="" height="100%" style="object-fit: contain;"></div>
 
                             <div style="display:flex; justify-content:space-between"> <h2><strong>${Element.nombre_producto}</strong></h2>
                             <a href=""> <img src='imagenes/editar.svg' alt="" srcset="" width="30px" class="icon-card"></a>
