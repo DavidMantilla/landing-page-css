@@ -163,7 +163,7 @@ INSERT INTO `orden_productos` (`id_orden_prod`, `id_orden`, `id_producto`, `cant
 
 CREATE TABLE `producto` (
   `id_producto` int(11) NOT NULL,
-  `imagen_producto` varchar(100) DEFAULT NULL,
+  `imagen_producto` varchar(200) DEFAULT NULL,
   `existencia` int(11) DEFAULT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `nombre_producto` varchar(20) DEFAULT NULL,
