@@ -21,12 +21,18 @@
                 <div class="main-content">
                     <div class="card-5">
                         <div class="card-body-5">
-                            <p> <strong>HOLA ¿EN QUE PODEMOS AYUDARTE HOY?</strong></p>
-                            <span class="color:#16AF89"><?php echo ('nombredelproducto') ?></span>
+                        <div style="width: 80%; margin: 0 auto; text-align: center; padding: 20px; border: 4px solid #E5A323; border-radius: 10px; background-color: #ffffff;">
+                                <p> <strong>HOLA ¿EN QUE PODEMOS AYUDARTE HOY?</strong></p>
+                            <!--<span class="color:#16AF89"></span>
                             <form action="#" method="get">
                                 <input type="text" class="search-input" placeholder="Escribe tu búsqueda..." />
                                 <button type="submit" class="search-button">Buscar</button>
-                            </form>
+                            </form>-->
+                                &nbsp;
+                            
+                                <p><strong>Si tienes algun inconveniente o duda. Por favor,  no dudes envíanos más detalles sobre el problema a <a href="mailto:amortegui.katherinjuli@gmail.com">amortegui.katherinjuli@gmail.com</a> para poder asistirte rápidamente.</strong></p>
+                                <p><strong>¡Gracias por tu paciencia!</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>

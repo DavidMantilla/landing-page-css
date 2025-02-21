@@ -484,7 +484,7 @@ a{
 .card-imagen{
     height: 250px;
     width: 100%;
-    background-color: #beb3b3;
+    background-color: #ffffff;
     padding: 0px;
     display: flex;
     flex-direction: column; /* Para alinear el contenido dentro */

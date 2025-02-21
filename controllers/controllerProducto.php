@@ -75,7 +75,6 @@ class controllerProducto
                     exit();
                 }
 
-                // 
 
                 $existencia = $_REQUEST["existencia"];
                 $descripcion = $_REQUEST["descripcion"];
